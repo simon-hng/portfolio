@@ -34,7 +34,7 @@
     "autoprefixer": "10.4.8",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
-    "json2md": "1.13.0",
+    "json2md": "2.0.0",
     "next-purgecss": "4.0.0",
     "node-pandoc": "0.3.0",
     "postcss": "8.4.16",
