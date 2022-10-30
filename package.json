@@ -29,7 +29,7 @@
     "@tailwindcss/typography": "0.5.7",
     "@types/json2md": "1.5.1",
     "@types/node": "18.7.14",
-    "@types/react": "18.0.18",
+    "@types/react": "18.0.24",
     "@zeit/next-css": "1.0.1",
     "autoprefixer": "10.4.8",
     "eslint": "8.23.0",
