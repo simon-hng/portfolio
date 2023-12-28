@@ -1,0 +1,3 @@
+[submodule "typst_template"]
+	path = typst_template
+	url = https://github.com/jskherman/cv.typ

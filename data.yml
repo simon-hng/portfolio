@@ -1,0 +1,170 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jskherman/cv.typ/main/cv.typ.schema.json
+
+personal:
+  name: Simon Huang
+  email: simon.huang@tum.de
+  url: https://simonhng.dev
+  phone: (+49)
+  location:
+    city: Munich
+    region: Bavaria
+    postalCode: 80337
+    country: Germany
+  profiles:
+    - network: LinkedIn
+      username: simon-hng
+      url: https://linkedin.com/in/simon-hng
+    - network: GitHub
+      username: simon-hng
+      url: https://github.com/simon-hng
+
+work:
+  - organization: SelectCode
+    position: Working Student – Full Stack Development
+    url: https://www.selectcode.de/
+    location: Munich
+    startDate: 2023-10-01
+    endDate: "present"
+    highlights:
+      - Key contributor to enhancing everbay.de, a recruiting platform,implementing features using NestJS, ReactJS, Hasura, and GraphQL
+
+  - organization: Siemens
+    position: Working Student – Software Engineering
+    url: https://www.siemens.com/
+    location: Munich
+    startDate: 2021-11-01
+    endDate: 2023-09-30
+    highlights:
+      - Led development for the frontend of an internal service tool written in React and NextJS.
+      - Implemented GitLab CI/CD for continuous integration and deployment.
+
+  - organization: Technical University of Munich
+    position: Tutor
+    url: https://www.tum.de/
+    location: Munich
+    startDate: 2020-10-01
+    endDate: 2021-10-31
+    highlights:
+      - Tutored students in math preparation, programming , and software engineering courses.
+      - Offered tutoring and mentoring to students, simplifying complex concepts in programming and software engineering.
+
+  - organization: olli design
+    position: Web Developer
+    url: https://www.olli.design/
+    location: Hamburg
+    startDate: 2016-11-01
+    endDate: 2019-07-31
+    highlights:
+      - Designed and implemented templates, customizing the appearance and layout of websites to align with client branding and requirements.
+      - Extensive experience in frontend development, creating modern and responsive user interfaces using HTML, CSS, and JavaScript.
+
+education:
+  - institution: Technical University of Munich
+    url: https://www.tum.de/
+    area: Informatics
+    studyType: Bachelor of Science
+    startDate: 2019-10-01
+    endDate: 2023-10-31
+    location: Munich
+    honors:
+    courses:
+    highlights:
+      - Application subject mathematics
+      - "Thesis in Applied Software Engineering: Learning Analytics of Grading Programming Exercises"
+
+  - institution: Technical University of Munich
+    url: https://www.tum.de/
+    area: Informatics
+    studyType: Master of Science
+    startDate: 2023-10-01
+    endDate: "present"
+    location: Munich
+    honors:
+    courses:
+    highlights:
+      - Focus on Software Engineering and Machine Learning
+
+affiliations:
+  - organization: TUM.ai Student Initiative, Technical University of Munich
+    position: Teamlead Software Development
+    location: Munich
+    url: http://tum-ai.com/
+    startDate: 2023-06-01
+    endDate: "present"
+    highlights:
+      - Led projects implementing a brand and design system, and a comprehensive review tool for efficient applicant evaluation. Overseeing system design, infrastructure for cloud deployment, and project coordination.
+      - Elicited requirements from diverse stakeholders in academia and industry to determine user needs for our projects.
+
+  - organization: Google Developer Student Club
+    position: Core Team
+    location: Munich
+    url: https://gdsc.community.dev/
+    startDate: 2023-10-01
+    endDate: "present"
+    highlights:
+      - Organized diverse events and workshops, cultivating technical, communication, and soft skills.
+
+awards:
+  - title: "TUM Hackathon @Microsoft: Using LLMs to improve the student support at TUM"
+    date: 2023-12-03
+    issuer: Microsoft
+    url: https://gamma.app/public/LLMs-for-Student-Support-TUM-x-Microsoft-Hackathon-0ws34zwd187rss1?mode=doc
+    location: Munich
+    highlights:
+      - First place finish out of 50 Participants by creating a LLM solution with both chat bot and email support
+  - title: "hackaTUM"
+    date: 2023-11-19
+    issuer: Solana
+    url: https://hack.tum.de/
+    location: Munich
+    highlights:
+      - "First place finish for the Solana challenge, building CrowdLana, a decentralized crowdfunding platform using smart contracts"
+
+certificates:
+
+publications:
+
+projects:
+
+skills:
+  - category: Soft Skills
+    skills:
+      - Communication
+      - Critical Thinking
+      - Leadership
+      - Persuasive Writing
+      - Technical Writing
+  - category: Programming
+    skills:
+      - Rust
+      - TypeScript
+      - JavaScript
+      - C++20
+      - Python
+      - SQL
+      - Lua
+      - Java
+      - C
+      - R
+  - category: Web Development
+    skills:
+      - Next.js
+      - Figma
+      - React
+      - Angular
+      - Node.js
+      - Svelte and Sveltekit
+      - Tailwind CSS
+      - Spring Boot
+
+languages:
+  - language: English
+    fluency: "C1: Advanced"
+  - language: German
+    fluency: Native speaker
+  - language: Chinese
+    fluency: "Basic proficiency"
+
+interests:
+
+references:
