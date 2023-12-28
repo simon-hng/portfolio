@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-json-schema": "typescript-json-schema ./src/data/resume-schema.ts CurriculumVitae -o src/data/resume-schema.json"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
@@ -26,6 +27,7 @@
     "react-dom": "^18",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
+    "typescript-json-schema": "^0.62.0",
     "vaul": "^0.8.0"
   },
   "devDependencies": {
