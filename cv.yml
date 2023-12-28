@@ -1,7 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jskherman/cv.typ/main/cv.typ.schema.json
 
 personal:
+  avatar: https://avatars.githubusercontent.com/u/25489463?v=4
   name: Simon Huang
+  about: "Informatics student at TUM, Full Stack Developer at SelectCode."
   email: simon.huang@tum.de
   url: https://simonhng.dev
   phone: (+49)

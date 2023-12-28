@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.15",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
+    "@types/js-yaml": "^4.0.9",
     "@vercel/analytics": "^1.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
+    "date-fns": "^3.0.6",
+    "js-yaml": "^4.1.0",
     "lucide-react": "^0.300.0",
     "next": "14.0.4",
     "react": "^18",

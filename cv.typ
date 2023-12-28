@@ -1,7 +1,7 @@
 #import "typst_template/cv.typ": *
 
 // Load CV data from YAML
-#let cvdata = yaml("data.yml")
+#let cvdata = yaml("cv.yml")
 
 #let uservars = (
     headingfont: "Geist Mono", // Set font for headings
