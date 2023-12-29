@@ -17,7 +17,7 @@ interface Props {
 export const ExperienceCard = ({ item }: Props) => (
   <Card key={item.organization}>
     <CardHeader>
-      <div className="flex items-center justify-between gap-x-2 text-base">
+      <div className="flex items-center justify-between gap-4 text-base">
         <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
           <a className="hover:underline" href={item.url}>
             {item.organization}
@@ -35,7 +35,7 @@ export const ExperienceCard = ({ item }: Props) => (
             ))}
           </span>
         </h3>
-        <div className="text-sm tabular-nums text-gray-500">
+        <div className="text-nowrap text-sm tabular-nums text-gray-500">
           {formatDate(item.startDate)} - {formatDate(item.endDate)}
         </div>
       </div>

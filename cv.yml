@@ -21,7 +21,6 @@ personal:
 
 work:
   - organization: SelectCode
-    keywords: ["Hybrid"]
     position: Working Student – Full Stack Development
     url: https://www.selectcode.de/
     location: Munich
@@ -31,7 +30,6 @@ work:
       - Key contributor to enhancing everbay.de, a recruiting platform,implementing features using NestJS, ReactJS, Hasura, and GraphQL.
 
   - organization: Siemens
-    keywords: ["Hybrid"]
     position: Working Student – Software Engineering
     url: https://www.siemens.com/
     location: Munich
