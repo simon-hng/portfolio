@@ -30,7 +30,7 @@ work:
     startDate: 2023-10-01T00:00:00Z
     endDate: "present"
     highlights:
-      - Key contributor to enhancing everbay.de, a recruiting platform, implementing features using NestJS, ReactJS, and GraphQL.
+      - Key contributor to everbay, a recruiting platform, implementing features using NestJS, React, and GraphQL.
 
   - organization: Siemens
     position: Working Student – Software Engineering
@@ -49,7 +49,7 @@ work:
     startDate: 2020-10-01T00:00:00Z
     endDate: 2021-10-31T00:00:00Z
     highlights:
-      - Tutored students in math preparation, programming , and software engineering courses.
+      - Tutored students in math preparation, programming, and software engineering courses.
       - Offered tutoring and mentoring to students, simplifying complex concepts in programming and software engineering.
 
   - organization: olli design
@@ -89,8 +89,8 @@ education:
       - "Thesis in Applied Software Engineering: Learning Analytics of Grading Programming Exercises."
 
 affiliations:
-  - organization: TUM.ai Student Initiative, Technical University of Munich
-    position: Teamlead Software Development
+  - organization: TUM.ai Student Initiative
+    position: Head of Software Development
     location: Munich
     url: https://tum-ai.com/
     startDate: 2023-06-01T00:00:00Z
@@ -152,7 +152,7 @@ skills:
       - Angular
       - Node.js
       - Svelte and Sveltekit
-      - Tailwind CSS
+      - TailwindCSS
       - Spring Boot
 
 languages:
@@ -204,7 +204,7 @@ projects:
     keywords: [Hackerthon, rust, axum, redis, Next.js]
 
   - name: Smolbo
-    url: https://smolbo.dev
+    url: https://smolbo.com
     affiliation: none
     startDate: 2023-12-28t00:00:00z
     endDate: "present"
