@@ -11,9 +11,12 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
+import { FilePdf, Fire, SuitcaseSimple } from "@phosphor-icons/react/dist/ssr";
+import { Profile } from "@/data/resume-schema";
+import { SocialIcon } from "./social-icon";
 
 interface Props {
-  links: { url: string; title: string }[];
+  links: { url: string; title: Profile["network"] }[];
   email?: string;
 }
 
@@ -52,7 +55,10 @@ export const CommandMenu = ({ links, email }: Props) => {
                 window.open("/cv.pdf", "_blank");
               }}
             >
-              <span>Print</span>
+              <span className="flex gap-2">
+                <FilePdf />
+                Print
+              </span>
             </CommandItem>
 
             {!!email && (
@@ -63,11 +69,16 @@ export const CommandMenu = ({ links, email }: Props) => {
                     window.open(
                       `mailto:${email}?subject=${encodeURIComponent(
                         "You're hired",
+                      )}&${encodeURIComponent(
+                        "I love your CV and I want to see you.",
                       )}`,
                     );
                   }}
                 >
-                  <span>Hire me</span>
+                  <span className="flex gap-2">
+                    <SuitcaseSimple />
+                    Hire me
+                  </span>
                 </CommandItem>
                 <CommandItem
                   onSelect={() => {
@@ -75,11 +86,16 @@ export const CommandMenu = ({ links, email }: Props) => {
                     window.open(
                       `mailto:${email}?subject=${encodeURIComponent(
                         "You're fired",
+                      )}&${encodeURIComponent(
+                        "I hate your CV and I never want to see you again.",
                       )}`,
                     );
                   }}
                 >
-                  <span>Fire me</span>
+                  <span className="flex gap-2">
+                    <Fire />
+                    Fire me
+                  </span>
                 </CommandItem>
               </>
             )}
@@ -94,7 +110,10 @@ export const CommandMenu = ({ links, email }: Props) => {
                   window.open(url, "_blank");
                 }}
               >
-                <span>{title}</span>
+                <span className="flex gap-2">
+                  <SocialIcon social={title} />
+                  {title}
+                </span>
               </CommandItem>
             ))}
           </CommandGroup>

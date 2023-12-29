@@ -1,4 +1,4 @@
-interface Profile {
+export interface Profile {
   network: "GitHub" | "LinkedIn";
   username: string;
   url: string;

@@ -6,12 +6,12 @@ import { Section } from "@/components/ui/section";
 import { Globe, Envelope, Phone } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
-import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 
 import { data } from "@/data/resume-data";
 import { ExperienceCard } from "@/components/experience-card";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
+import { SocialIcon } from "@/components/social-icon";
 const { personal, work, education, affiliations, awards, projects, skills } =
   data;
 
@@ -65,26 +65,19 @@ export default function Page() {
                   </a>
                 </Button>
               ) : null}
-              {personal.profiles.map((social) => {
-                const Icon = {
-                  LinkedIn: LinkedinLogo,
-                  GitHub: GithubLogo,
-                }[social.network];
-
-                return (
-                  <Button
-                    key={social.network}
-                    className="h-8 w-8"
-                    variant="outline"
-                    size="icon"
-                    asChild
-                  >
-                    <a href={social.url}>
-                      <Icon className="h-4 w-4" />
-                    </a>
-                  </Button>
-                );
-              })}
+              {personal.profiles.map((social) => (
+                <Button
+                  key={social.network}
+                  className="h-8 w-8"
+                  variant="outline"
+                  size="icon"
+                  asChild
+                >
+                  <a href={social.url}>
+                    <SocialIcon social={social.network} className="h-4 w-4" />
+                  </a>
+                </Button>
+              ))}
             </div>
             <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
               {personal.email ? (
