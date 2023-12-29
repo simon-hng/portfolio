@@ -14,9 +14,10 @@ import {
 
 interface Props {
   links: { url: string; title: string }[];
+  email?: string;
 }
 
-export const CommandMenu = ({ links }: Props) => {
+export const CommandMenu = ({ links, email }: Props) => {
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -48,12 +49,42 @@ export const CommandMenu = ({ links }: Props) => {
             <CommandItem
               onSelect={() => {
                 setOpen(false);
-                window.print();
+                window.open("/cv.pdf", "_blank");
               }}
             >
               <span>Print</span>
             </CommandItem>
+
+            {!!email && (
+              <>
+                <CommandItem
+                  onSelect={() => {
+                    setOpen(false);
+                    window.open(
+                      `mailto:${email}?subject=${encodeURIComponent(
+                        "You're hired",
+                      )}`,
+                    );
+                  }}
+                >
+                  <span>Hire me</span>
+                </CommandItem>
+                <CommandItem
+                  onSelect={() => {
+                    setOpen(false);
+                    window.open(
+                      `mailto:${email}?subject=${encodeURIComponent(
+                        "You're fired",
+                      )}`,
+                    );
+                  }}
+                >
+                  <span>Fire me</span>
+                </CommandItem>
+              </>
+            )}
           </CommandGroup>
+
           <CommandGroup heading="Links">
             {links.map(({ url, title }) => (
               <CommandItem

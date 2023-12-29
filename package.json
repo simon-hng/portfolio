@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "bun run build:typst && next build",
     "start": "next start",
     "lint": "next lint",
     "generate-json-schema": "typescript-json-schema ./src/data/resume-schema.ts CurriculumVitae -o src/data/resume-schema.json --required",
-    "dev:typst": "typst watch cv.typ",
+    "dev:typst": "typst watch cv.typ ./public/cv.pdf",
     "build:typst": "typst compile cv.typ ./public/cv.pdf"
   },
   "dependencies": {

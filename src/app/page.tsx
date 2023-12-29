@@ -199,7 +199,7 @@ export default function Page() {
           </div>
         </Section>
 
-        {projects && (
+        {!!projects.length && (
           <Section className="print-force-new-page scroll-mb-16">
             <h2 className="text-xl font-bold">Projects</h2>
             <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
@@ -220,11 +220,8 @@ export default function Page() {
       </section>
 
       <CommandMenu
+        email={personal.email}
         links={[
-          {
-            url: personal.url,
-            title: "Personal Website",
-          },
           ...personal.profiles.map((profile) => ({
             url: profile.url,
             title: profile.network,
