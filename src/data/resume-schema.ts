@@ -1,5 +1,5 @@
 export interface Profile {
-  network: "GitHub" | "LinkedIn";
+  network: "GitHub" | "LinkedIn" | "LeetCode";
   username: string;
   url: string;
 }

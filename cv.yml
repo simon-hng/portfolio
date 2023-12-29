@@ -18,6 +18,9 @@ personal:
     - network: GitHub
       username: simon-hng
       url: https://github.com/simon-hng
+    - network: LeetCode
+      username: simon-hng
+      url: https://leetcode.com/simon-hng
 
 work:
   - organization: SelectCode
@@ -27,7 +30,7 @@ work:
     startDate: 2023-10-01T00:00:00Z
     endDate: "present"
     highlights:
-      - Key contributor to enhancing everbay.de, a recruiting platform,implementing features using NestJS, ReactJS, Hasura, and GraphQL.
+      - Key contributor to enhancing everbay.de, a recruiting platform, implementing features using NestJS, ReactJS, and GraphQL.
 
   - organization: Siemens
     position: Working Student – Software Engineering
@@ -103,18 +106,18 @@ affiliations:
     startDate: 2023-10-01T00:00:00Z
     endDate: "present"
     highlights:
-      - Organized diverse events and workshops, cultivating technical, communication, and soft skills.
+      - Organized diverse events and workshops, cultivating both technical, and persuasive communication skills.
 
 awards:
   - title: "TUM Hackathon @Microsoft: Using LLMs to improve the student support at TUM"
-    date: 2023-12-03
+    date: 2023-12-03T00:00:00Z
     issuer: Microsoft
     url: https://gamma.app/public/LLMs-for-Student-Support-TUM-x-Microsoft-Hackathon-0ws34zwd187rss1?mode=doc
     location: Munich
     highlights:
       - First place finish out of 50 Participants by creating a LLM solution with both chat bot and email support.
-  - title: "hackaTUM"
-    date: 2023-11-19
+  - title: "hackaTUM Solana challenge"
+    date: 2023-11-19T00:00:00Z
     issuer: Solana
     url: https://hack.tum.de/
     location: Munich

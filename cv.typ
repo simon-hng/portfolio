@@ -4,20 +4,16 @@
 #let cvdata = yaml("cv.yml")
 
 #let uservars = (
-    headingfont: "Geist Mono", // Set font for headings
+    headingfont: "Geist", // Set font for headings
     bodyfont: "Geist",   // Set font for body
     fontsize: 9pt, // 10pt, 11pt, 12pt
     linespacing: 6pt,
-    showAddress: true, // true/false Show address in contact info
+    showAddress: false, // true/false Show address in contact info
     showNumber: false,  // true/false Show phone number in contact info
+    showProjects: false // true/false Show project section - leads to more than one page for my cv
 )
 
 // setrules and showrules can be overridden by re-declaring it here
-// #let setrules(doc) = {
-//      // Add custom document style rules here
-//
-//      doc
-// }
 
 #let customrules(doc) = {
     // Add custom document style rules here
@@ -36,6 +32,54 @@
     doc
 }
 
+// Address
+#let addresstext(info, uservars) = {
+    if uservars.showAddress {
+        block(width: 100%)[
+            #info.personal.location.postalCode
+            #info.personal.location.city, #info.personal.location.country
+            #v(-4pt)
+        ]
+    } else {none}
+}
+
+// Arrange the contact profiles with a diamond separator
+#let contacttext(info, uservars) = block(width: 100%)[
+    // Contact Info
+    // Create a list of contact profiles
+    #let profiles = (
+        box(link("mailto:" + info.personal.email)),
+        if uservars.showNumber {box(link("tel:" + info.personal.phone))} else {none},
+        if info.personal.url != none {
+            box(link(info.personal.url)[#info.personal.url.split("//").at(1)])
+        }
+    ).filter(it => it != none) // Filter out none elements from the profile array
+
+    // Add any social profiles
+    #if info.personal.profiles.len() > 0 {
+        for profile in info.personal.profiles {
+            profiles.push(
+                box(link(profile.url)[#profile.url.split("//").at(1)])
+            )
+        }
+    }
+
+    // #set par(justify: false)
+    #set text(font: uservars.bodyfont, weight: "medium", size: uservars.fontsize * 1)
+    #pad(x: 0em)[
+        #profiles.join([#sym.space.en | #sym.space.en])
+    ]
+]
+
+// Create layout of the title + contact info
+#let cvheading(info, uservars) = {
+    align(center)[
+        = #info.personal.name
+        #addresstext(info, uservars)
+        #contacttext(info, uservars)
+        #v(1em)
+    ]
+}
 // Each section function can be overridden by re-declaring it here
 #let cveducation(info, isbreakable: true) = {
     if info.education != none {block[
@@ -73,8 +117,8 @@
 }
 
 // Projects
-#let cvprojects(info, isbreakable: true) = {
-    if info.projects.len() != 0 {block[
+#let cvprojects(info, usercars, isbreakable: true) = {
+    if uservars.showProjects and info.projects.len() != 0 {block[
         == Projects
         #for project in info.projects {
             // Parse ISO date strings into datetime objects
@@ -192,7 +236,7 @@
 #cvwork(cvdata)
 #cveducation(cvdata)
 #cvaffiliations(cvdata)
-#cvprojects(cvdata)
+#cvprojects(cvdata, uservars)
 #cvawards(cvdata)
 #cvcertificates(cvdata)
 #cvpublications(cvdata)
