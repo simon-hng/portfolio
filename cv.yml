@@ -163,7 +163,64 @@ languages:
   - language: Chinese
     fluency: "Basic proficiency"
 
-projects: []
+projects:
+  - name: CV website
+    url: https://github.com/simon-hng/portfolio
+    affiliation: none
+    startDate: 2023-12-28t00:00:00z
+    endDate: "present"
+    highlights: 
+      - "Automatic creation of this website and a pdf out of a single YAML file"
+    keywords: [Side Project, Next.js, Typescript, Vercel]
+
+  - name: TUM Support Bot
+    url: https://github.com/simon-hng/microsoft-hackathon-2023
+    affiliation: Microsoft
+    startDate: 2023-12-01t00:00:00z
+    endDate: 2023-12-03t00:00:00z
+    highlights: 
+      - Support Bot that automatically answers common questions regarind the TUM School of Management.
+      - First place finish TUM Hackerthon @Microsoft.
+    keywords: [Hackerthon, Next.js, Typescript, Vercel, Vercel AI SDK, LangChain, Azure OpenAI]
+
+  - name: CrowdLana
+    url: https://github.com/simon-hng/hackatum2023-solana
+    affiliation: Solana
+    startDate: 2023-11-17T00:00:00Z
+    endDate: 2023-11-19T00:00:00Z
+    highlights: 
+      - Decentralized crowdfunding platform using smart contracts.
+      - First place finish Solana challenge at hackaTUM 2023.
+    keywords: [Hackerthon, Next.js, Typescript, Vercel, DaisyUI, TailwindCSS]
+
+  - name: Check24 hackaTUM challenge
+    url: https://github.com/simon-hng/hackatum2023-check24
+    affiliation: check24
+    startDate: 2023-11-17T00:00:00Z
+    endDate: 2023-11-19T00:00:00Z
+    highlights: 
+      - Fast search function for getting crafsmen near your postal code.
+      - Honorary invite to the check24 office to present solution.
+    keywords: [Hackerthon, rust, axum, redis, Next.js]
+
+  - name: Smolbo
+    url: https://smolbo.dev
+    affiliation: none
+    startDate: 2023-12-28t00:00:00z
+    endDate: "present"
+    highlights: 
+      - LLM based flashcard app that generates flashcards out of lecture slides.
+    keywords: [Side Project, Next.js, Typescript, Vercel, LangChain, Pinecone, TailwindCSS]
+
+  - name: Check24 GenDev messenger
+    url: https://github.com/simon-hng/check24-messenger-challenge
+    affiliation: check24
+    startDate: 2023-09-11t00:00:00z
+    endDate: 2023-11-12t00:00:00z
+    highlights: 
+      - Interactive chat app with a rust-server using actor model and websockets.
+      - Web client in svelte with svelte kit.
+    keywords: [Side project, rust, actix, websockets, svelte, sveltekit]
 
 certificates: []
 

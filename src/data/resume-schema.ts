@@ -1,6 +1,9 @@
 export interface Profile {
   network: "GitHub" | "LinkedIn" | "LeetCode";
   username: string;
+  /**
+   * @TJS-format uri
+   */
   url: string;
 }
 
@@ -14,6 +17,9 @@ interface Location {
 interface Work {
   organization: string;
   position: string;
+  /**
+   * @TJS-format uri
+   */
   url: string;
   location: string;
   startDate: Date;
@@ -24,6 +30,9 @@ interface Work {
 
 interface Education {
   institution: string;
+  /**
+   * @TJS-format uri
+   */
   url: string;
   area: string;
   studyType: string;
@@ -39,6 +48,9 @@ interface Affiliation {
   organization: string;
   position: string;
   location: string;
+  /**
+   * @TJS-format uri
+   */
   url: string;
   startDate: Date;
   endDate: Date | "present";
@@ -49,6 +61,9 @@ interface Award {
   title: string;
   date: Date;
   issuer: string;
+  /**
+   * @TJS-format uri
+   */
   url?: string;
   location: string;
   highlights: string[];
@@ -58,6 +73,9 @@ interface Certificate {
   name: string;
   date: Date;
   issuer: string;
+  /**
+   * @TJS-format uri
+   */
   url: string;
 }
 
@@ -65,16 +83,23 @@ interface Publication {
   name: string;
   publisher: string;
   releaseDate: Date;
+  /**
+   * @TJS-format uri
+   */
   url: string;
 }
 
 interface Project {
   name: string;
+  /**
+   * @TJS-format uri
+   */
   url: string;
   affiliation: string;
   startDate: Date;
   endDate: Date | "present";
   highlights: string[];
+  keywords?: string[];
 }
 
 interface Skill {
@@ -90,6 +115,9 @@ interface Language {
 interface Reference {
   name: string;
   reference: string;
+  /**
+   * @TJS-format uri
+   */
   url: string;
 }
 
@@ -99,6 +127,9 @@ export interface CurriculumVitae {
     name: string;
     email: string;
     phone?: string;
+    /**
+     * @TJS-format uri
+     */
     url: string;
     location: Location;
     profiles: Profile[];

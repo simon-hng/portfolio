@@ -200,15 +200,15 @@ export default function Page() {
         {!!projects.length && (
           <Section className="print-force-new-page scroll-mb-16">
             <h2 className="text-xl font-bold">Projects</h2>
-            <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+            <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-2 print:gap-2 md:grid-cols-2 lg:grid-cols-2">
               {projects.map((project) => {
                 return (
                   <ProjectCard
                     key={project.name}
                     title={project.name}
                     description={project.highlights.join(" ")}
-                    tags={[]}
-                    link={"link" in project ? project.url : undefined}
+                    tags={project.keywords}
+                    link={project.url}
                   />
                 );
               })}

@@ -35,6 +35,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 }
             },
@@ -71,6 +72,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 }
             },
@@ -96,6 +98,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 }
             },
@@ -156,6 +159,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 }
             },
@@ -221,6 +225,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 },
                 "username": {
@@ -257,6 +262,12 @@
                     },
                     "type": "array"
                 },
+                "keywords": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "name": {
                     "type": "string"
                 },
@@ -265,6 +276,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 }
             },
@@ -291,6 +303,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 }
             },
@@ -311,6 +324,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 }
             },
@@ -379,6 +393,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 }
             },
@@ -461,6 +476,7 @@
                     "type": "string"
                 },
                 "url": {
+                    "format": "uri",
                     "type": "string"
                 }
             },
