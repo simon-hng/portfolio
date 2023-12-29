@@ -193,15 +193,15 @@ projects:
       - First place finish Solana challenge at hackaTUM 2023.
     keywords: [Hackerthon, Next.js, Typescript, Vercel, DaisyUI, TailwindCSS]
 
-  - name: Check24 hackaTUM challenge
+  - name: CHECK24 hackaTUM challenge
     url: https://github.com/simon-hng/hackatum2023-check24
-    affiliation: check24
+    affiliation: CHECK24
     startDate: 2023-11-17T00:00:00Z
     endDate: 2023-11-19T00:00:00Z
     highlights: 
       - Fast search function for getting crafsmen near your postal code.
-      - Honorary invite to the check24 office to present solution.
-    keywords: [Hackerthon, rust, axum, redis, Next.js]
+      - Honorary invite to the CHECK24 office to present solution.
+    keywords: [Hackerthon, Rust, axum, redis, Next.js]
 
   - name: Smolbo
     url: https://smolbo.com
@@ -212,15 +212,15 @@ projects:
       - LLM based flashcard app that generates flashcards out of lecture slides.
     keywords: [Side Project, Next.js, Typescript, Vercel, LangChain, Pinecone, TailwindCSS]
 
-  - name: Check24 GenDev messenger
+  - name: CHECK24 GenDev messenger
     url: https://github.com/simon-hng/check24-messenger-challenge
-    affiliation: check24
+    affiliation: CHECK24
     startDate: 2023-09-11t00:00:00z
     endDate: 2023-11-12t00:00:00z
     highlights: 
-      - Interactive chat app with a rust-server using actor model and websockets.
+      - Interactive chat app with a Rust-server using actor model and websockets.
       - Web client in svelte with svelte kit.
-    keywords: [Side project, rust, actix, websockets, svelte, sveltekit]
+    keywords: [Side project, Rust, actix, websockets, svelte, sveltekit]
 
 certificates: []
 
