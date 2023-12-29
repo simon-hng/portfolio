@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-json-schema": "typescript-json-schema ./src/data/resume-schema.ts CurriculumVitae -o src/data/resume-schema.json"
+    "generate-json-schema": "typescript-json-schema ./src/data/resume-schema.ts CurriculumVitae -o src/data/resume-schema.json --required",
+    "dev:typst": "typst watch cv.typ",
+    "build:typst": "typst compile cv.typ ./public/cv.pdf"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
@@ -28,6 +30,7 @@
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript-json-schema": "^0.62.0",
+    "typst": "^0.10.0-8",
     "vaul": "^0.8.0"
   },
   "devDependencies": {

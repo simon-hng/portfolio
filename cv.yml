@@ -6,7 +6,6 @@ personal:
   about: "Informatics student at TUM, Full Stack Developer at SelectCode."
   email: simon.huang@tum.de
   url: https://simonhng.dev
-  phone: (+49)
   location:
     city: Munich
     region: Bavaria
@@ -32,6 +31,7 @@ work:
       - Key contributor to enhancing everbay.de, a recruiting platform,implementing features using NestJS, ReactJS, Hasura, and GraphQL
 
   - organization: Siemens
+    keywords: ["Hybrid"]
     position: Working Student – Software Engineering
     url: https://www.siemens.com/
     location: Munich
@@ -67,6 +67,8 @@ education:
     area: Informatics
     studyType: Bachelor of Science
     startDate: 2019-10-01T00:00:00Z
+    honors: []
+    courses: []
     endDate: 2023-10-31T00:00:00Z
     location: Munich
     highlights:
@@ -78,6 +80,8 @@ education:
     area: Informatics
     studyType: Master of Science
     startDate: 2023-10-01T00:00:00Z
+    honors: []
+    courses: []
     endDate: "present"
     location: Munich
     highlights:
@@ -157,3 +161,13 @@ languages:
     fluency: Native speaker
   - language: Chinese
     fluency: "Basic proficiency"
+
+projects: []
+
+certificates: []
+
+publications: []
+
+interests: []
+
+references: []

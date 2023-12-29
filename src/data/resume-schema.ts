@@ -30,8 +30,8 @@ interface Education {
   startDate: Date;
   endDate: Date | "present";
   location: string;
-  honors?: string[];
-  courses?: string[];
+  honors: string[];
+  courses: string[];
   highlights?: string[];
 }
 
@@ -87,10 +87,6 @@ interface Language {
   fluency: string;
 }
 
-interface Interest {
-  interests: string[];
-}
-
 interface Reference {
   name: string;
   reference: string;
@@ -102,23 +98,22 @@ export interface CurriculumVitae {
     avatar: string;
     name: string;
     email: string;
-    phone: string;
+    phone?: string;
     url: string;
     location: Location;
     profiles: Profile[];
-    summary: string;
-    about?: string;
+    about: string;
+    summary?: string;
   };
   work: Work[];
   education: Education[];
-  affiliations: Affiliation[] | undefined;
-  awards: Award[] | undefined;
-  certificates: Certificate[] | undefined;
-  publications: Publication[] | undefined;
-  projects: Project[] | undefined;
-  keywords: string[] | undefined;
-  skills: Skill[] | undefined;
-  languages: Language[] | undefined;
-  interests: Interest | undefined;
-  references: Reference[] | undefined;
+  affiliations: Affiliation[];
+  awards: Award[];
+  certificates: Certificate[];
+  publications: Publication[];
+  projects: Project[];
+  skills: Skill[];
+  languages: Language[];
+  interests: string[];
+  references: Reference[];
 }

@@ -38,6 +38,14 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "endDate",
+                "highlights",
+                "location",
+                "organization",
+                "position",
+                "startDate"
+            ],
             "type": "object"
         },
         "Award": {
@@ -64,6 +72,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "date",
+                "highlights",
+                "issuer",
+                "location",
+                "title"
+            ],
             "type": "object"
         },
         "Certificate": {
@@ -81,6 +96,12 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "date",
+                "issuer",
+                "name",
+                "url"
+            ],
             "type": "object"
         },
         "Education": {
@@ -135,17 +156,16 @@
                     "type": "string"
                 }
             },
-            "type": "object"
-        },
-        "Interest": {
-            "properties": {
-                "interests": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
+            "required": [
+                "area",
+                "courses",
+                "endDate",
+                "honors",
+                "institution",
+                "location",
+                "startDate",
+                "studyType"
+            ],
             "type": "object"
         },
         "Language": {
@@ -157,6 +177,10 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fluency",
+                "language"
+            ],
             "type": "object"
         },
         "Location": {
@@ -174,6 +198,12 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "city",
+                "country",
+                "postalCode",
+                "region"
+            ],
             "type": "object"
         },
         "Profile": {
@@ -192,6 +222,11 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "network",
+                "url",
+                "username"
+            ],
             "type": "object"
         },
         "Project": {
@@ -228,6 +263,14 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "affiliation",
+                "endDate",
+                "highlights",
+                "name",
+                "startDate",
+                "url"
+            ],
             "type": "object"
         },
         "Publication": {
@@ -246,6 +289,12 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "name",
+                "publisher",
+                "releaseDate",
+                "url"
+            ],
             "type": "object"
         },
         "Reference": {
@@ -260,6 +309,11 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "name",
+                "reference",
+                "url"
+            ],
             "type": "object"
         },
         "Skill": {
@@ -274,6 +328,10 @@
                     "type": "array"
                 }
             },
+            "required": [
+                "category",
+                "skills"
+            ],
             "type": "object"
         },
         "Work": {
@@ -319,6 +377,15 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "endDate",
+                "highlights",
+                "location",
+                "organization",
+                "position",
+                "startDate",
+                "url"
+            ],
             "type": "object"
         }
     },
@@ -348,9 +415,6 @@
             "type": "array"
         },
         "interests": {
-            "$ref": "#/definitions/Interest"
-        },
-        "keywords": {
             "items": {
                 "type": "string"
             },
@@ -395,6 +459,15 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "about",
+                "avatar",
+                "email",
+                "location",
+                "name",
+                "profiles",
+                "url"
+            ],
             "type": "object"
         },
         "projects": {
@@ -428,6 +501,20 @@
             "type": "array"
         }
     },
+    "required": [
+        "affiliations",
+        "awards",
+        "certificates",
+        "education",
+        "interests",
+        "languages",
+        "personal",
+        "projects",
+        "publications",
+        "references",
+        "skills",
+        "work"
+    ],
     "type": "object"
 }
 
