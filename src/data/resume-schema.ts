@@ -24,7 +24,7 @@ interface Work {
 
 interface Education {
   institution: string;
-  url?: string;
+  url: string;
   area: string;
   studyType: string;
   startDate: Date;
@@ -39,7 +39,7 @@ interface Affiliation {
   organization: string;
   position: string;
   location: string;
-  url?: string;
+  url: string;
   startDate: Date;
   endDate: Date | "present";
   highlights: string[];
@@ -47,7 +47,7 @@ interface Affiliation {
 
 interface Award {
   title: string;
-  date: string;
+  date: Date;
   issuer: string;
   url?: string;
   location: string;
@@ -56,7 +56,7 @@ interface Award {
 
 interface Certificate {
   name: string;
-  date: string;
+  date: Date;
   issuer: string;
   url: string;
 }

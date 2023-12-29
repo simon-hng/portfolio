@@ -28,7 +28,7 @@ work:
     startDate: 2023-10-01T00:00:00Z
     endDate: "present"
     highlights:
-      - Key contributor to enhancing everbay.de, a recruiting platform,implementing features using NestJS, ReactJS, Hasura, and GraphQL
+      - Key contributor to enhancing everbay.de, a recruiting platform,implementing features using NestJS, ReactJS, Hasura, and GraphQL.
 
   - organization: Siemens
     keywords: ["Hybrid"]
@@ -65,19 +65,6 @@ education:
   - institution: Technical University of Munich
     url: https://www.tum.de/
     area: Informatics
-    studyType: Bachelor of Science
-    startDate: 2019-10-01T00:00:00Z
-    honors: []
-    courses: []
-    endDate: 2023-10-31T00:00:00Z
-    location: Munich
-    highlights:
-      - Application subject mathematics
-      - "Thesis in Applied Software Engineering: Learning Analytics of Grading Programming Exercises"
-
-  - institution: Technical University of Munich
-    url: https://www.tum.de/
-    area: Informatics
     studyType: Master of Science
     startDate: 2023-10-01T00:00:00Z
     honors: []
@@ -85,7 +72,20 @@ education:
     endDate: "present"
     location: Munich
     highlights:
-      - Focus on Software Engineering and Machine Learning
+      - Focus on Software Engineering and Machine Learning.
+
+  - institution: Technical University of Munich
+    url: https://www.tum.de/
+    area: Informatics
+    studyType: Bachelor of Science
+    startDate: 2019-10-01T00:00:00Z
+    honors: []
+    courses: []
+    endDate: 2023-10-31T00:00:00Z
+    location: Munich
+    highlights:
+      - Application subject mathematics.
+      - "Thesis in Applied Software Engineering: Learning Analytics of Grading Programming Exercises."
 
 affiliations:
   - organization: TUM.ai Student Initiative, Technical University of Munich
@@ -114,14 +114,14 @@ awards:
     url: https://gamma.app/public/LLMs-for-Student-Support-TUM-x-Microsoft-Hackathon-0ws34zwd187rss1?mode=doc
     location: Munich
     highlights:
-      - First place finish out of 50 Participants by creating a LLM solution with both chat bot and email support
+      - First place finish out of 50 Participants by creating a LLM solution with both chat bot and email support.
   - title: "hackaTUM"
     date: 2023-11-19
     issuer: Solana
     url: https://hack.tum.de/
     location: Munich
     highlights:
-      - "First place finish for the Solana challenge, building CrowdLana, a decentralized crowdfunding platform using smart contracts"
+      - "First place finish for the Solana challenge, building CrowdLana, a decentralized crowdfunding platform using smart contracts."
 
 skills:
   - category: Soft Skills

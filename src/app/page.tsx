@@ -1,5 +1,4 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
@@ -8,10 +7,13 @@ import { Globe, Envelope, Phone } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
-import { format } from "date-fns";
 
 import { data } from "@/data/resume-data";
-const { personal, work, education, projects, skills } = data;
+import { ExperienceCard } from "@/components/experience-card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { formatDate } from "@/lib/utils";
+const { personal, work, education, affiliations, awards, projects, skills } =
+  data;
 
 export const metadata: Metadata = {
   title: `${personal.name} | ${personal.about}`,
@@ -19,11 +21,6 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const formatDate = (date: Date | "present") => {
-    if (date === "present") return "Present";
-    return format(date, "LLL yyyy");
-  };
-
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
@@ -113,6 +110,7 @@ export default function Page() {
             </AvatarFallback>
           </Avatar>
         </div>
+
         {personal.summary && (
           <Section>
             <h2 className="text-xl font-bold">About</h2>
@@ -121,73 +119,77 @@ export default function Page() {
             </p>
           </Section>
         )}
+
         <Section>
           <h2 className="text-xl font-bold">Work Experience</h2>
-          {work.map((work) => {
-            return (
-              <Card key={work.organization}>
-                <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                      <a className="hover:underline" href={work.url}>
-                        {work.organization}
-                      </a>
+          {work.map((work) => (
+            <ExperienceCard
+              item={{
+                ...work,
+                description: work.position,
+              }}
+            />
+          ))}
+        </Section>
 
-                      <span className="inline-flex gap-x-1">
-                        {work.keywords?.map((keyword) => (
-                          <Badge
-                            variant="secondary"
-                            className="align-middle text-xs"
-                            key={keyword}
-                          >
-                            {keyword}
-                          </Badge>
-                        ))}
-                      </span>
-                    </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
-                      {formatDate(work.startDate)} - {formatDate(work.endDate)}
-                    </div>
+        <Section>
+          <h2 className="text-xl font-bold">Education</h2>
+          {education.map((education) => (
+            <ExperienceCard
+              item={{
+                ...education,
+                organization: education.institution,
+                description: `${education.studyType} in ${education.area}`,
+              }}
+            />
+          ))}
+        </Section>
+
+        <Section>
+          <h2 className="text-xl font-bold">Leadership & Activities</h2>
+          {affiliations.map((affiliation) => (
+            <ExperienceCard
+              item={{
+                ...affiliation,
+                description: affiliation.position,
+              }}
+            />
+          ))}
+        </Section>
+
+        <Section>
+          <h2 className="text-xl font-bold">Honors & Awards</h2>
+          {awards.map((award) => (
+            <Card>
+              <CardHeader>
+                <div className="flex items-center justify-between gap-x-2 text-base">
+                  <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+                    <a className="hover:underline" href={award.url}>
+                      Issued by {award.issuer}
+                    </a>
+                  </h3>
+                  <div className="text-sm tabular-nums text-gray-500">
+                    {formatDate(award.date)}
                   </div>
+                </div>
 
-                  <h4 className="font-mono text-sm leading-none">
-                    {work.position}
-                  </h4>
-                </CardHeader>
-                <CardContent className="mt-2 text-xs">
-                  <ul>
-                    {work.highlights.map((highlight) => (
+                <h4 className="font-mono text-sm leading-none">
+                  {award.title}
+                </h4>
+              </CardHeader>
+              <CardContent className="mt-2 text-xs">
+                {!!award?.highlights?.length && (
+                  <ul className="list-disc pl-3">
+                    {award.highlights.map((highlight) => (
                       <li key={highlight}>{highlight}</li>
                     ))}
                   </ul>
-                </CardContent>
-              </Card>
-            );
-          })}
+                )}
+              </CardContent>
+            </Card>
+          ))}
         </Section>
-        <Section>
-          <h2 className="text-xl font-bold">Education</h2>
-          {education.map((education) => {
-            return (
-              <Card key={education.institution}>
-                <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="font-semibold leading-none">
-                      {education.institution}
-                    </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
-                      {formatDate(education.startDate)} -{" "}
-                      {formatDate(education.endDate)}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="mt-2">
-                  {education.studyType} in {education.area}
-                </CardContent>
-              </Card>
-            );
-          })}
-        </Section>
+
         <Section>
           <h2 className="text-xl font-bold">Skills</h2>
           <div className="flex flex-wrap gap-1">
