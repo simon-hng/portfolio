@@ -117,6 +117,7 @@ export default function Page() {
           <h2 className="text-xl font-bold">Work Experience</h2>
           {work.map((work) => (
             <ExperienceCard
+              key={`${work.organization}${work.position}`}
               item={{
                 ...work,
                 description: work.position,
@@ -129,6 +130,7 @@ export default function Page() {
           <h2 className="text-xl font-bold">Education</h2>
           {education.map((education) => (
             <ExperienceCard
+              key={`${education.institution}${education.studyType}`}
               item={{
                 ...education,
                 organization: education.institution,
@@ -142,6 +144,7 @@ export default function Page() {
           <h2 className="text-xl font-bold">Leadership & Activities</h2>
           {affiliations.map((affiliation) => (
             <ExperienceCard
+              key={`${affiliation.organization}${affiliation.position}`}
               item={{
                 ...affiliation,
                 description: affiliation.position,
@@ -153,7 +156,7 @@ export default function Page() {
         <Section>
           <h2 className="text-xl font-bold">Honors & Awards</h2>
           {awards.map((award) => (
-            <Card>
+            <Card key={`${award.issuer}${award.title}`}>
               <CardHeader>
                 <div className="flex items-center justify-between gap-x-2 text-base">
                   <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
