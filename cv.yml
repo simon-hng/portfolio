@@ -3,7 +3,7 @@
 personal:
   avatar: https://avatars.githubusercontent.com/u/25489463?v=4
   name: Simon Huang
-  about: "Informatics student at TUM, Full Stack Developer at SelectCode."
+  about: "Informatics student at TUM, Founding Engineer at AllQuiet"
   email: simon.huang@tum.de
   url: https://simonhng.dev
   location:
@@ -31,28 +31,28 @@ work:
     endDate: "present"
     highlights:
       - First hire at a SaaS startup focused on simplifying incident escalation.
-      - Implemented features across web app, backend, native Android, and iOS apps.
-      - Collaborated with cofounders on architectural decisions to drive business growth.
+      - Developed features across web app, backend, native Android, and iOS apps.
+      - Partnered with cofounders on architectural decisions, driving business growth.
 
   - organization: SelectCode
-    position: Working Student – Full Stack Development
+    position: Working Student – Full Stack Developer
     url: https://www.selectcode.de/
     location: Munich
     startDate: 2023-10-01T00:00:00Z
     endDate: 2024-04-01T00:00:00Z
     highlights:
       - Key contributor to Everbay, a recruiting platform, implementing features with NestJS, React, and GraphQL.
-      - Developed a customizable email service and led a major redesign.
-      - Improved developer tooling, CI/CD pipelines, and overall code quality.
+      - Built a customizable email service and led a major redesign.
+      - Enhanced developer tooling, CI/CD pipelines, and overall code quality.
 
   - organization: Siemens
-    position: Working Student – Software Engineering
+    position: Working Student – Software Engineer
     url: https://www.siemens.com/
     location: Munich
     startDate: 2021-11-01T00:00:00Z
     endDate: 2023-09-30T00:00:00Z
     highlights:
-      - Led development for the frontend of an internal service tool written in React and NextJS.
+      - Led frontend development for an internal service tool using React and NextJS.
       - Implemented GitLab CI/CD for continuous integration and deployment.
 
   - organization: Technical University of Munich
@@ -63,7 +63,7 @@ work:
     endDate: 2021-10-31T00:00:00Z
     highlights:
       - Tutored students in math preparation, programming, and software engineering courses.
-      - Offered tutoring and mentoring to students, simplifying complex concepts in programming and software engineering.
+      - Mentored students, simplifying complex concepts in programming and software engineering.
 
 #  - organization: olli design
 #    position: Web Developer
@@ -86,7 +86,7 @@ education:
     endDate: "present"
     location: Munich
     highlights:
-      - Specialization in Software Engineering, Databases, and Algorithms
+      - Specialization in Software Engineering, Databases, and Algorithms.
 
   - institution: Technical University of Munich
     url: https://www.tum.de/
@@ -99,7 +99,7 @@ education:
     location: Munich
     highlights:
       - Application subject mathematics.
-      - "Thesis in Applied Software Engineering: Learning Analytics of Grading Programming Exercises."
+      - "Thesis: Learning Analytics of Grading Programming Exercises."
 
 affiliations:
   - organization: TUM.ai Student Initiative
@@ -109,17 +109,18 @@ affiliations:
     startDate: 2023-06-01T00:00:00Z
     endDate: "present"
     highlights:
-      - Led projects implementing a brand and design system, and a comprehensive review tool for efficient applicant evaluation. Overseeing system design, infrastructure for cloud deployment, and project coordination.
-      - Elicited requirements from diverse stakeholders in academia and industry to determine user needs for our projects.
+      - Led projects implementing a brand and design system, and a comprehensive review tool for efficient applicant evaluation.
+      - Gathered requirements from stakeholders in academia and industry.
+      - Oversaw system design, cloud infrastructure, and project coordination.
 
   - organization: Google Developer Student Club
-    position: Core Team
+    position: Core Team Member
     location: Munich
     url: https://gdsc.community.dev/
     startDate: 2023-10-01T00:00:00Z
     endDate: "present"
     highlights:
-      - Organized diverse events and workshops, cultivating both technical, and persuasive communication skills.
+      - Organized events and workshops, enhancing technical and communication skills.
 
 awards:
   - title: "TUM Hackathon at Microsoft: Using LLMs to improve the student support at TUM"
@@ -128,14 +129,15 @@ awards:
     url: https://gamma.app/public/LLMs-for-Student-Support-TUM-x-Microsoft-Hackathon-0ws34zwd187rss1?mode=doc
     location: Munich
     highlights:
-      - First place finish out of 50 Participants by creating a LLM solution with both chat bot and email support.
-  - title: "hackaTUM Solana challenge"
+      - First place for creating an LLM solution with both chatbot and email support.
+
+  - title: "hackaTUM Solana Challenge"
     date: 2023-11-19T00:00:00Z
     issuer: Solana
     url: https://hack.tum.de/
     location: Munich
     highlights:
-      - "First place finish for the Solana challenge, building CrowdLana, a decentralized crowdfunding platform using smart contracts."
+      - First place for building CrowdLana, a decentralized crowdfunding platform using smart contracts.
 
 skills:
   - category: Soft Skills
@@ -182,60 +184,60 @@ projects:
   - name: CV website
     url: https://github.com/simon-hng/portfolio
     affiliation: none
-    startDate: 2023-12-28t00:00:00z
+    startDate: 2023-12-28T00:00:00Z
     endDate: "present"
-    highlights: 
-      - "Automatic creation of this website and a pdf out of a single YAML file"
-    keywords: [Side Project, Next.js, Typescript, Vercel]
+    highlights:
+      - "Automatic creation of this website and a PDF from a single YAML file."
+    keywords: [Side Project, Next.js, TypeScript, Vercel]
 
   - name: TUM Support Bot
     url: https://github.com/simon-hng/microsoft-hackathon-2023
     affiliation: Microsoft
-    startDate: 2023-12-01t00:00:00z
-    endDate: 2023-12-03t00:00:00z
-    highlights: 
-      - Support Bot that automatically answers common questions regarind the TUM School of Management.
-      - First place finish TUM Hackerthon Microsoft.
-    keywords: [Hackerthon, Next.js, Typescript, Vercel, Vercel AI SDK, LangChain, Azure OpenAI]
+    startDate: 2023-12-01T00:00:00Z
+    endDate: 2023-12-03T00:00:00Z
+    highlights:
+      - Developed a support bot that answers common questions about the TUM School of Management.
+      - Won first place at the TUM Hackathon by Microsoft.
+    keywords: [Hackathon, Next.js, TypeScript, Vercel, Vercel AI SDK, LangChain, Azure OpenAI]
 
   - name: CrowdLana
     url: https://github.com/simon-hng/hackatum2023-solana
     affiliation: Solana
     startDate: 2023-11-17T00:00:00Z
     endDate: 2023-11-19T00:00:00Z
-    highlights: 
-      - Decentralized crowdfunding platform using smart contracts.
-      - First place finish Solana challenge at hackaTUM 2023.
-    keywords: [Hackerthon, Next.js, Typescript, Vercel, DaisyUI, TailwindCSS]
+    highlights:
+      - Built a decentralized crowdfunding platform using smart contracts.
+      - Won first place in the Solana challenge at hackaTUM 2023.
+    keywords: [Hackathon, Next.js, TypeScript, Vercel, DaisyUI, TailwindCSS]
 
   - name: CHECK24 hackaTUM challenge
     url: https://github.com/simon-hng/hackatum2023-check24
     affiliation: CHECK24
     startDate: 2023-11-17T00:00:00Z
     endDate: 2023-11-19T00:00:00Z
-    highlights: 
-      - Fast search function for getting crafsmen near your postal code.
-      - Honorary invite to the CHECK24 office to present solution.
-    keywords: [Hackerthon, Rust, axum, redis, Next.js]
+    highlights:
+      - Developed a fast search function for finding craftsmen near a postal code.
+      - Received an honorary invite to present the solution at CHECK24's office.
+    keywords: [Hackathon, Rust, Axum, Redis, Next.js]
 
   - name: Smolbo
     url: https://smolbo.com
     affiliation: none
-    startDate: 2023-12-28t00:00:00z
+    startDate: 2023-12-28T00:00:00Z
     endDate: "present"
-    highlights: 
-      - LLM based flashcard app that generates flashcards out of lecture slides.
-    keywords: [Side Project, Next.js, Typescript, Vercel, LangChain, Pinecone, TailwindCSS]
+    highlights:
+      - Created an LLM-based flashcard app that generates flashcards from lecture slides.
+    keywords: [Side Project, Next.js, TypeScript, Vercel, LangChain, Pinecone, TailwindCSS]
 
   - name: CHECK24 GenDev messenger
     url: https://github.com/simon-hng/check24-messenger-challenge
     affiliation: CHECK24
-    startDate: 2023-09-11t00:00:00z
-    endDate: 2023-11-12t00:00:00z
-    highlights: 
-      - Interactive chat app with a Rust-server using actor model and websockets.
-      - Web client in svelte with svelte kit.
-    keywords: [Side project, Rust, actix, websockets, svelte, sveltekit]
+    startDate: 2023-09-11T00:00:00Z
+    endDate: 2023-11-12T00:00:00Z
+    highlights:
+      - Developed an interactive chat app with a Rust server using the actor model and WebSockets.
+      - Created a web client in Svelte with SvelteKit.
+    keywords: [Side Project, Rust, Actix, WebSockets, Svelte, SvelteKit]
 
 certificates: []
 
