@@ -23,12 +23,21 @@ personal:
       url: https://leetcode.com/simon-hng
 
 work:
+  - organization: All Quiet
+    position: Working Student – Founding Engineer
+    url: https://allquiet.app/
+    location: Munich
+    startDate: 2024-04-01T00:00:00Z
+    endDate: "present"
+    highlights:
+      - First hire for a SaaS startup simplifying incident escalation
+
   - organization: SelectCode
     position: Working Student – Full Stack Development
     url: https://www.selectcode.de/
     location: Munich
     startDate: 2023-10-01T00:00:00Z
-    endDate: "present"
+    endDate: 2024-04-01T00:00:00Z
     highlights:
       - Key contributor to everbay, a recruiting platform, implementing features using NestJS, React, and GraphQL.
 
@@ -73,7 +82,7 @@ education:
     endDate: "present"
     location: Munich
     highlights:
-      - Focus on Software Engineering and Machine Learning.
+      - Focus on Software Engineering, Databases and Algorithms
 
   - institution: Technical University of Munich
     url: https://www.tum.de/
