@@ -5,7 +5,7 @@
   "scripts": {
     "dev:next": "next dev",
     "generate-json-schema": "typescript-json-schema ./src/data/resume-schema.ts CurriculumVitae -o src/data/resume-schema.json --required",
-    "dev:typst": "typst watch cv.typ ./public/cv.pdf",
+    "dev:typst": "typst watch cv.typ ./public/cv.pdf --font-path src/assets",
     "dev": "npm-run-all -p dev:typst dev:next",
     "build": "bun run build:typst && next build",
     "start": "next start",
