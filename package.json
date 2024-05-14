@@ -10,7 +10,7 @@
     "build": "bun run build:typst && next build",
     "start": "next start",
     "lint": "next lint",
-    "build:typst": "typst compile cv.typ ./public/cv.pdf"
+    "build:typst": "typst compile cv.typ ./public/cv.pdf --font-path src/assets"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
