@@ -30,7 +30,9 @@ work:
     startDate: 2024-04-01T00:00:00Z
     endDate: "present"
     highlights:
-      - First hire for a SaaS startup simplifying incident escalation
+      - First hire at a SaaS startup focused on simplifying incident escalation.
+      - Implemented features across web app, backend, native Android, and iOS apps.
+      - Collaborated with cofounders on architectural decisions to drive business growth.
 
   - organization: SelectCode
     position: Working Student – Full Stack Development
@@ -39,7 +41,9 @@ work:
     startDate: 2023-10-01T00:00:00Z
     endDate: 2024-04-01T00:00:00Z
     highlights:
-      - Key contributor to everbay, a recruiting platform, implementing features using NestJS, React, and GraphQL.
+      - Key contributor to Everbay, a recruiting platform, implementing features with NestJS, React, and GraphQL.
+      - Developed a customizable email service and led a major redesign.
+      - Improved developer tooling, CI/CD pipelines, and overall code quality.
 
   - organization: Siemens
     position: Working Student – Software Engineering
@@ -61,15 +65,15 @@ work:
       - Tutored students in math preparation, programming, and software engineering courses.
       - Offered tutoring and mentoring to students, simplifying complex concepts in programming and software engineering.
 
-  - organization: olli design
-    position: Web Developer
-    url: https://www.olli.design/
-    location: Hamburg
-    startDate: 2016-11-01T00:00:00Z
-    endDate: 2019-07-31T00:00:00Z
-    highlights:
-      - Designed and implemented templates, customizing the appearance and layout of websites to align with client branding and requirements.
-      - Extensive experience in frontend development, creating modern and responsive user interfaces using HTML, CSS, and JavaScript.
+#  - organization: olli design
+#    position: Web Developer
+#    url: https://www.olli.design/
+#    location: Hamburg
+#    startDate: 2016-11-01T00:00:00Z
+#    endDate: 2019-07-31T00:00:00Z
+#    highlights:
+#      - Designed and implemented templates, customizing the appearance and layout of websites to align with client branding and requirements.
+#      - Extensive experience in frontend development, creating modern and responsive user interfaces using HTML, CSS, and JavaScript.
 
 education:
   - institution: Technical University of Munich
@@ -82,7 +86,7 @@ education:
     endDate: "present"
     location: Munich
     highlights:
-      - Focus on Software Engineering, Databases and Algorithms
+      - Specialization in Software Engineering, Databases, and Algorithms
 
   - institution: Technical University of Munich
     url: https://www.tum.de/
@@ -118,7 +122,7 @@ affiliations:
       - Organized diverse events and workshops, cultivating both technical, and persuasive communication skills.
 
 awards:
-  - title: "TUM Hackathon @Microsoft: Using LLMs to improve the student support at TUM"
+  - title: "TUM Hackathon at Microsoft: Using LLMs to improve the student support at TUM"
     date: 2023-12-03T00:00:00Z
     issuer: Microsoft
     url: https://gamma.app/public/LLMs-for-Student-Support-TUM-x-Microsoft-Hackathon-0ws34zwd187rss1?mode=doc
@@ -148,12 +152,13 @@ skills:
       - JavaScript
       - C++20
       - Python
+      - C#
       - SQL
       - Lua
       - Java
       - C
       - R
-  - category: Web Development
+  - category: Tools, Frameworks and Libraries
     skills:
       - Next.js
       - Figma
@@ -162,6 +167,7 @@ skills:
       - Node.js
       - Svelte and Sveltekit
       - TailwindCSS
+      - .NET
       - Spring Boot
 
 languages:
@@ -170,7 +176,7 @@ languages:
   - language: German
     fluency: Native speaker
   - language: Chinese
-    fluency: "Basic proficiency"
+    fluency: "Basic"
 
 projects:
   - name: CV website
@@ -189,7 +195,7 @@ projects:
     endDate: 2023-12-03t00:00:00z
     highlights: 
       - Support Bot that automatically answers common questions regarind the TUM School of Management.
-      - First place finish TUM Hackerthon @Microsoft.
+      - First place finish TUM Hackerthon Microsoft.
     keywords: [Hackerthon, Next.js, Typescript, Vercel, Vercel AI SDK, LangChain, Azure OpenAI]
 
   - name: CrowdLana
