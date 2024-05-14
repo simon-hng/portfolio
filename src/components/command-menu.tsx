@@ -44,7 +44,7 @@ export const CommandMenu = ({ links, email }: Props) => {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-0 left-0 right-0 border-t border-t-muted bg-white p-1"
+        className="fixed bottom-0 left-0 right-0 border-t border-t-muted bg-white p-1 w-full"
       >
         <p className="flex items-center justify-center gap-2 text-sm text-muted-foreground print:hidden">
           Open the command menu with
