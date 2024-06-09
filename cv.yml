@@ -3,7 +3,7 @@
 personal:
   avatar: https://avatars.githubusercontent.com/u/25489463?v=4
   name: Simon Huang
-  about: "Informatics student at TUM, Founding Engineer at AllQuiet"
+  about: "Informatics student at TUM"
   email: simon.huang@tum.de
   url: https://simonhng.dev
   location:
@@ -23,6 +23,17 @@ personal:
       url: https://leetcode.com/simon-hng
 
 work:
+  #   - organization: SIXT
+  #     position: University Project – iOS developer
+  #     url: https://allquiet.app/
+  #     location: Munich
+  #     startDate: 2024-04-01T00:00:00Z
+  #     endDate: "present"
+  #     highlights:
+  #       - Developed an Apple CoreML model to accurately detect and read license plates.
+  #       - Created an immersive AR experience, highlighting cars using various 3D models and scenes.
+  #       - Led the team, effectively managing and distributing responsibilities across multiple domains.
+
   - organization: All Quiet
     position: Working Student – Founding Engineer
     url: https://allquiet.app/
@@ -101,6 +112,18 @@ education:
       - Application subject mathematics.
       - "Thesis: Learning Analytics of Grading Programming Exercises."
 
+#  - institution: Klosterschule
+#    url: https://klosterschule-hamburg.de/
+#    area: General Education
+#    studyType: Abitur
+#    startDate: 2011-06-01T00:00:00Z
+#    honors: []
+#    courses: []
+#    endDate: 2019-06-21T00:00:00Z
+#    location: Hamburg
+#    highlights:
+#      - Advanced Physics and Mathematics
+
 affiliations:
   - organization: TUM.ai Student Initiative
     position: Head of Software Development
@@ -152,6 +175,7 @@ skills:
       - Rust
       - TypeScript
       - JavaScript
+      - Swift
       - C++20
       - Python
       - C#
