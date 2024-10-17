@@ -3,7 +3,7 @@
 personal:
   avatar: https://avatars.githubusercontent.com/u/25489463?v=4
   name: Simon Huang
-  about: "Informatics student at TUM"
+  about: "M.Sc. Informatics student at TUM"
   email: simon.huang@tum.de
   url: https://simonhng.dev
   location:
@@ -23,48 +23,55 @@ personal:
       url: https://leetcode.com/simon-hng
 
 work:
-  #   - organization: SIXT
-  #     position: University Project – iOS developer
-  #     url: https://allquiet.app/
-  #     location: Munich
-  #     startDate: 2024-04-01T00:00:00Z
-  #     endDate: "present"
-  #     highlights:
-  #       - Developed an Apple CoreML model to accurately detect and read license plates.
-  #       - Created an immersive AR experience, highlighting cars using various 3D models and scenes.
-  #       - Led the team, effectively managing and distributing responsibilities across multiple domains.
+  - organization: Productlane
+    position: Working Student – Founding Engineer
+    url: https://productlane.com/
+    location: Munich
+    startDate: 2024-10-01T00:00:00Z
+    endDate: "present"
+    highlights:
+      - Building a customer support platform for B2B SaaS companies, serving clients such as Clerk, Mintlify and Flightcontrol.
+
+  # - organization: SIXT
+  #   position: University Project – iOS developer
+  #   url: https://allquiet.app/
+  #   location: Munich
+  #   startDate: 2024-04-01T00:00:00Z
+  #   endDate: 2024-07-01T00:00:00Z
+  #   highlights:
+  #     - Developed an Apple CoreML model to accurately detect and read license plates.
+  #     - Created an immersive AR experience, highlighting cars using various 3D models and scenes.
+  #     - Led the team, effectively managing and distributing responsibilities across multiple domains.
 
   - organization: All Quiet
     position: Working Student – Founding Engineer
     url: https://allquiet.app/
     location: Munich
     startDate: 2024-04-01T00:00:00Z
-    endDate: "present"
+    endDate: 2024-10-01T00:00:00Z
     highlights:
-      - First hire at a SaaS startup focused on simplifying incident escalation.
-      - Developed features across web app, backend, native Android, and iOS apps.
-      - Partnered with cofounders on architectural decisions, driving business growth.
+      - First hire at a SaaS startup focused on simplifying incident escalation, serving clients such as MistralAI, Groupon, and Paradox.
+      - Developed features across web app, backend, and native Android and iOS applications, enhancing user experience and functionality.
 
-  - organization: SelectCode
-    position: Working Student – Full Stack Developer
-    url: https://www.selectcode.de/
-    location: Munich
-    startDate: 2023-10-01T00:00:00Z
-    endDate: 2024-04-01T00:00:00Z
-    highlights:
-      - Key contributor to Everbay, a recruiting platform, implementing features with NestJS, React, and GraphQL.
-      - Built a customizable email service and led a major redesign.
-      - Enhanced developer tooling, CI/CD pipelines, and overall code quality.
+  # - organization: SelectCode
+  #   position: Working Student – Full Stack Developer
+  #   url: https://www.selectcode.de/
+  #   location: Munich
+  #   startDate: 2023-10-01T00:00:00Z
+  #   endDate: 2024-04-01T00:00:00Z
+  #   highlights:
+  #     - Key contributor to Everbay, a recruiting platform, implementing features with NestJS, React, and GraphQL.
+  #     - Enhanced developer tooling, CI/CD pipelines, and overall code quality.
 
-  - organization: Siemens
-    position: Working Student – Software Engineer
-    url: https://www.siemens.com/
-    location: Munich
-    startDate: 2021-11-01T00:00:00Z
-    endDate: 2023-09-30T00:00:00Z
-    highlights:
-      - Led frontend development for an internal service tool using React and NextJS.
-      - Implemented GitLab CI/CD for continuous integration and deployment.
+  # - organization: Siemens
+  #   position: Working Student – Software Engineer
+  #   url: https://www.siemens.com/
+  #   location: Munich
+  #   startDate: 2021-11-01T00:00:00Z
+  #   endDate: 2023-09-30T00:00:00Z
+  #   highlights:
+  #     - Led frontend development for an internal service tool using React and NextJS.
+  #     - Implemented GitLab CI/CD for continuous integration and deployment.
 
   - organization: Technical University of Munich
     position: Tutor
@@ -76,15 +83,15 @@ work:
       - Tutored students in math preparation, programming, and software engineering courses.
       - Mentored students, simplifying complex concepts in programming and software engineering.
 
-#  - organization: olli design
-#    position: Web Developer
-#    url: https://www.olli.design/
-#    location: Hamburg
-#    startDate: 2016-11-01T00:00:00Z
-#    endDate: 2019-07-31T00:00:00Z
-#    highlights:
-#      - Designed and implemented templates, customizing the appearance and layout of websites to align with client branding and requirements.
-#      - Extensive experience in frontend development, creating modern and responsive user interfaces using HTML, CSS, and JavaScript.
+  # - organization: olli design
+  #   position: Web Developer
+  #   url: https://www.olli.design/
+  #   location: Hamburg
+  #   startDate: 2016-11-01T00:00:00Z
+  #   endDate: 2019-07-31T00:00:00Z
+  #   highlights:
+  #     - Designed and implemented templates, customizing the appearance and layout of websites to align with client branding and requirements.
+  #     - Extensive experience in frontend development, creating modern and responsive user interfaces using HTML, CSS, and JavaScript.
 
 education:
   - institution: Technical University of Munich
@@ -136,12 +143,22 @@ affiliations:
       - Gathered requirements from stakeholders in academia and industry.
       - Oversaw system design, cloud infrastructure, and project coordination.
 
+  - organization: Google Developer Groups on Campus TUM
+    position: Organizer
+    location: Munich
+    url: https://gdg.community.dev/gdg-on-campus-technical-university-of-munich-munich-germany/
+    startDate: 2024-10-01T00:00:00Z
+    endDate: "present"
+    highlights:
+      - Coordinated and executed events and workshops about both technical and non-technical topics.
+      - Led a team of 5 in collaboration with local companies such as JetBrains and CHECK24.
+
   - organization: Google Developer Student Club
     position: Core Team Member
     location: Munich
-    url: https://gdsc.community.dev/
+    url: https://gdg.community.dev/gdg-on-campus-technical-university-of-munich-munich-germany/
     startDate: 2023-10-01T00:00:00Z
-    endDate: "present"
+    endDate: 2024-10-01T00:00:00Z
     highlights:
       - Organized events and workshops, enhancing technical and communication skills.
 
@@ -163,13 +180,6 @@ awards:
       - First place for building CrowdLana, a decentralized crowdfunding platform using smart contracts.
 
 skills:
-  - category: Soft Skills
-    skills:
-      - Communication
-      - Critical Thinking
-      - Leadership
-      - Persuasive Writing
-      - Technical Writing
   - category: Programming
     skills:
       - Rust
@@ -187,6 +197,7 @@ skills:
   - category: Tools, Frameworks and Libraries
     skills:
       - Next.js
+      - Linear
       - Figma
       - React
       - Angular
@@ -202,7 +213,7 @@ languages:
   - language: German
     fluency: Native speaker
   - language: Chinese
-    fluency: "Basic"
+    fluency: "Native"
 
 projects:
   - name: CV website
@@ -222,7 +233,16 @@ projects:
     highlights:
       - Developed a support bot that answers common questions about the TUM School of Management.
       - Won first place at the TUM Hackathon by Microsoft.
-    keywords: [Hackathon, Next.js, TypeScript, Vercel, Vercel AI SDK, LangChain, Azure OpenAI]
+    keywords:
+      [
+        Hackathon,
+        Next.js,
+        TypeScript,
+        Vercel,
+        Vercel AI SDK,
+        LangChain,
+        Azure OpenAI,
+      ]
 
   - name: CrowdLana
     url: https://github.com/simon-hng/hackatum2023-solana
@@ -251,7 +271,16 @@ projects:
     endDate: "present"
     highlights:
       - Created an LLM-based flashcard app that generates flashcards from lecture slides.
-    keywords: [Side Project, Next.js, TypeScript, Vercel, LangChain, Pinecone, TailwindCSS]
+    keywords:
+      [
+        Side Project,
+        Next.js,
+        TypeScript,
+        Vercel,
+        LangChain,
+        Pinecone,
+        TailwindCSS,
+      ]
 
   - name: CHECK24 GenDev messenger
     url: https://github.com/simon-hng/check24-messenger-challenge
