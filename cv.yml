@@ -74,7 +74,7 @@ work:
   #     - Implemented GitLab CI/CD for continuous integration and deployment.
 
   - organization: Technical University of Munich
-    position: Tutor
+    position: Teaching Assistant
     url: https://www.tum.de/
     location: Munich
     startDate: 2020-10-01T00:00:00Z
@@ -200,7 +200,6 @@ skills:
       - Linear
       - Figma
       - React
-      - Angular
       - Node.js
       - Svelte and Sveltekit
       - TailwindCSS
