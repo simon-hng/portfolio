@@ -1,5 +1,5 @@
 import { Profile } from "@/data/resume-schema";
-import { Code, GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
+import { Code, Github, Linkedin } from "lucide-react";
 
 interface Props {
   social: Profile["network"];
@@ -8,8 +8,8 @@ interface Props {
 
 export const SocialIcon = ({ social, className }: Props) => {
   const Icon = {
-    LinkedIn: LinkedinLogo,
-    GitHub: GithubLogo,
+    LinkedIn: Linkedin,
+    GitHub: Github,
     LeetCode: Code,
   }[social];
 

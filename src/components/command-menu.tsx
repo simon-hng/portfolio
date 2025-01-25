@@ -11,14 +11,9 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import {
-  FilePdf,
-  Fire,
-  HandTap,
-  SuitcaseSimple,
-} from "@phosphor-icons/react/dist/ssr";
 import { Profile } from "@/data/resume-schema";
 import { SocialIcon } from "./social-icon";
+import { Briefcase, FileText, Flame } from "lucide-react";
 
 interface Props {
   links: { url: string; title: Profile["network"] }[];
@@ -44,7 +39,7 @@ export const CommandMenu = ({ links, email }: Props) => {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-0 left-0 right-0 border-t border-t-muted bg-white p-1 w-full"
+        className="fixed bottom-0 left-0 right-0 w-full border-t border-t-muted bg-white p-1"
       >
         <p className="flex items-center justify-center gap-2 text-sm text-muted-foreground print:hidden">
           Open the command menu with
@@ -66,7 +61,7 @@ export const CommandMenu = ({ links, email }: Props) => {
               }}
             >
               <span className="flex gap-2">
-                <FilePdf />
+                <FileText />
                 Print
               </span>
             </CommandItem>
@@ -86,7 +81,7 @@ export const CommandMenu = ({ links, email }: Props) => {
                   }}
                 >
                   <span className="flex gap-2">
-                    <SuitcaseSimple />
+                    <Briefcase />
                     Hire me
                   </span>
                 </CommandItem>
@@ -103,7 +98,7 @@ export const CommandMenu = ({ links, email }: Props) => {
                   }}
                 >
                   <span className="flex gap-2">
-                    <Fire />
+                    <Flame />
                     Fire me
                   </span>
                 </CommandItem>

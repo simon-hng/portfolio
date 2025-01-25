@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
-import { Globe, Envelope, Phone } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 
@@ -12,6 +11,7 @@ import { ExperienceCard } from "@/components/experience-card";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
 import { SocialIcon } from "@/components/social-icon";
+import { Globe, Mail, Phone } from "lucide-react";
 const { personal, work, education, affiliations, awards, projects, skills } =
   data;
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pb-12 print:p-12 md:p-16">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pb-12 md:p-16 print:p-12">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1 space-y-1.5">
@@ -49,7 +49,7 @@ export default function Page() {
                   asChild
                 >
                   <a href={`mailto:${personal.email}`}>
-                    <Envelope className="h-4 w-4" />
+                    <Mail className="h-4 w-4" />
                   </a>
                 </Button>
               ) : null}
@@ -200,7 +200,7 @@ export default function Page() {
         {!!projects.length && (
           <Section className="print-force-new-page scroll-mb-16">
             <h2 className="text-xl font-bold">Projects</h2>
-            <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-2 print:gap-2 md:grid-cols-2 lg:grid-cols-2">
+            <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2 print:grid-cols-2 print:gap-2">
               {projects.map((project) => {
                 return (
                   <ProjectCard
