@@ -40,9 +40,11 @@ export const ExperienceCard = ({ item }: Props) => (
         </div>
       </div>
 
-      <h4 className="font-mono text-sm leading-none">{item.description}</h4>
+      <h4 className="text-primary-muted text-sm leading-none">
+        {item.description}
+      </h4>
     </CardHeader>
-    <CardContent className="mt-2 text-xs">
+    <CardContent className="mt-2 text-sm">
       {!!item?.highlights?.length && (
         <ul className="list-disc pl-3">
           {item.highlights.map((highlight) => (

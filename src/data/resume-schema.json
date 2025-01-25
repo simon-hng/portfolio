@@ -1,541 +1,501 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "definitions": {
-        "Affiliation": {
-            "properties": {
-                "endDate": {
-                    "anyOf": [
-                        {
-                            "format": "date-time",
-                            "type": "string"
-                        },
-                        {
-                            "const": "present",
-                            "type": "string"
-                        }
-                    ]
-                },
-                "highlights": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "location": {
-                    "type": "string"
-                },
-                "organization": {
-                    "type": "string"
-                },
-                "position": {
-                    "type": "string"
-                },
-                "startDate": {
-                    "format": "date-time",
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Affiliation": {
+      "properties": {
+        "endDate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
             },
-            "required": [
-                "endDate",
-                "highlights",
-                "location",
-                "organization",
-                "position",
-                "startDate",
-                "url"
-            ],
-            "type": "object"
+            {
+              "const": "present",
+              "type": "string"
+            }
+          ]
         },
-        "Award": {
-            "properties": {
-                "date": {
-                    "format": "date-time",
-                    "type": "string"
-                },
-                "highlights": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "issuer": {
-                    "type": "string"
-                },
-                "location": {
-                    "type": "string"
-                },
-                "title": {
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "date",
-                "highlights",
-                "issuer",
-                "location",
-                "title"
-            ],
-            "type": "object"
+        "highlights": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         },
-        "Certificate": {
-            "properties": {
-                "date": {
-                    "format": "date-time",
-                    "type": "string"
-                },
-                "issuer": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "date",
-                "issuer",
-                "name",
-                "url"
-            ],
-            "type": "object"
+        "location": {
+          "type": "string"
         },
-        "Education": {
-            "properties": {
-                "area": {
-                    "type": "string"
-                },
-                "courses": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "endDate": {
-                    "anyOf": [
-                        {
-                            "format": "date-time",
-                            "type": "string"
-                        },
-                        {
-                            "const": "present",
-                            "type": "string"
-                        }
-                    ]
-                },
-                "highlights": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "honors": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "institution": {
-                    "type": "string"
-                },
-                "location": {
-                    "type": "string"
-                },
-                "startDate": {
-                    "format": "date-time",
-                    "type": "string"
-                },
-                "studyType": {
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "area",
-                "courses",
-                "endDate",
-                "honors",
-                "institution",
-                "location",
-                "startDate",
-                "studyType",
-                "url"
-            ],
-            "type": "object"
+        "organization": {
+          "type": "string"
         },
-        "Language": {
-            "properties": {
-                "fluency": {
-                    "type": "string"
-                },
-                "language": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "fluency",
-                "language"
-            ],
-            "type": "object"
+        "position": {
+          "type": "string"
         },
-        "Location": {
-            "properties": {
-                "city": {
-                    "type": "string"
-                },
-                "country": {
-                    "type": "string"
-                },
-                "postalCode": {
-                    "type": "number"
-                },
-                "region": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "city",
-                "country",
-                "postalCode",
-                "region"
-            ],
-            "type": "object"
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
         },
-        "Profile": {
-            "properties": {
-                "network": {
-                    "enum": [
-                        "GitHub",
-                        "LeetCode",
-                        "LinkedIn"
-                    ],
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                },
-                "username": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "network",
-                "url",
-                "username"
-            ],
-            "type": "object"
-        },
-        "Project": {
-            "properties": {
-                "affiliation": {
-                    "type": "string"
-                },
-                "endDate": {
-                    "anyOf": [
-                        {
-                            "format": "date-time",
-                            "type": "string"
-                        },
-                        {
-                            "const": "present",
-                            "type": "string"
-                        }
-                    ]
-                },
-                "highlights": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "keywords": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "startDate": {
-                    "format": "date-time",
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "affiliation",
-                "endDate",
-                "highlights",
-                "name",
-                "startDate",
-                "url"
-            ],
-            "type": "object"
-        },
-        "Publication": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "publisher": {
-                    "type": "string"
-                },
-                "releaseDate": {
-                    "format": "date-time",
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "name",
-                "publisher",
-                "releaseDate",
-                "url"
-            ],
-            "type": "object"
-        },
-        "Reference": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "reference": {
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "name",
-                "reference",
-                "url"
-            ],
-            "type": "object"
-        },
-        "Skill": {
-            "properties": {
-                "category": {
-                    "type": "string"
-                },
-                "skills": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "required": [
-                "category",
-                "skills"
-            ],
-            "type": "object"
-        },
-        "Work": {
-            "properties": {
-                "endDate": {
-                    "anyOf": [
-                        {
-                            "format": "date-time",
-                            "type": "string"
-                        },
-                        {
-                            "const": "present",
-                            "type": "string"
-                        }
-                    ]
-                },
-                "highlights": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "keywords": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "location": {
-                    "type": "string"
-                },
-                "organization": {
-                    "type": "string"
-                },
-                "position": {
-                    "type": "string"
-                },
-                "startDate": {
-                    "format": "date-time",
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "endDate",
-                "highlights",
-                "location",
-                "organization",
-                "position",
-                "startDate",
-                "url"
-            ],
-            "type": "object"
+        "url": {
+          "format": "uri",
+          "type": "string"
         }
+      },
+      "required": [
+        "endDate",
+        "highlights",
+        "location",
+        "organization",
+        "position",
+        "startDate",
+        "url"
+      ],
+      "type": "object"
     },
-    "properties": {
-        "affiliations": {
-            "items": {
-                "$ref": "#/definitions/Affiliation"
-            },
-            "type": "array"
+    "Award": {
+      "properties": {
+        "date": {
+          "format": "date-time",
+          "type": "string"
         },
-        "awards": {
-            "items": {
-                "$ref": "#/definitions/Award"
-            },
-            "type": "array"
+        "highlights": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         },
-        "certificates": {
-            "items": {
-                "$ref": "#/definitions/Certificate"
-            },
-            "type": "array"
+        "issuer": {
+          "type": "string"
         },
-        "education": {
-            "items": {
-                "$ref": "#/definitions/Education"
-            },
-            "type": "array"
+        "location": {
+          "type": "string"
         },
-        "interests": {
-            "items": {
-                "type": "string"
-            },
-            "type": "array"
+        "title": {
+          "type": "string"
         },
-        "languages": {
-            "items": {
-                "$ref": "#/definitions/Language"
-            },
-            "type": "array"
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": ["date", "highlights", "issuer", "location", "title"],
+      "type": "object"
+    },
+    "Certificate": {
+      "properties": {
+        "date": {
+          "format": "date-time",
+          "type": "string"
         },
-        "personal": {
-            "properties": {
-                "about": {
-                    "type": "string"
-                },
-                "avatar": {
-                    "type": "string"
-                },
-                "email": {
-                    "type": "string"
-                },
-                "location": {
-                    "$ref": "#/definitions/Location"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "phone": {
-                    "type": "string"
-                },
-                "profiles": {
-                    "items": {
-                        "$ref": "#/definitions/Profile"
-                    },
-                    "type": "array"
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "url": {
-                    "format": "uri",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "about",
-                "avatar",
-                "email",
-                "location",
-                "name",
-                "profiles",
-                "url"
-            ],
-            "type": "object"
+        "issuer": {
+          "type": "string"
         },
-        "projects": {
-            "items": {
-                "$ref": "#/definitions/Project"
-            },
-            "type": "array"
+        "name": {
+          "type": "string"
         },
-        "publications": {
-            "items": {
-                "$ref": "#/definitions/Publication"
-            },
-            "type": "array"
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": ["date", "issuer", "name", "url"],
+      "type": "object"
+    },
+    "Education": {
+      "properties": {
+        "area": {
+          "type": "string"
         },
-        "references": {
-            "items": {
-                "$ref": "#/definitions/Reference"
+        "courses": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "endDate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
             },
-            "type": "array"
+            {
+              "const": "present",
+              "type": "string"
+            }
+          ]
+        },
+        "highlights": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "honors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "institution": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "studyType": {
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "area",
+        "courses",
+        "endDate",
+        "honors",
+        "institution",
+        "location",
+        "startDate",
+        "studyType",
+        "url"
+      ],
+      "type": "object"
+    },
+    "Language": {
+      "properties": {
+        "fluency": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      },
+      "required": ["fluency", "language"],
+      "type": "object"
+    },
+    "Location": {
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "number"
+        },
+        "region": {
+          "type": "string"
+        }
+      },
+      "required": ["city", "country", "postalCode", "region"],
+      "type": "object"
+    },
+    "Profile": {
+      "properties": {
+        "network": {
+          "enum": ["GitHub", "LeetCode", "LinkedIn"],
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "required": ["network", "url", "username"],
+      "type": "object"
+    },
+    "Project": {
+      "properties": {
+        "affiliation": {
+          "type": "string"
+        },
+        "endDate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "const": "present",
+              "type": "string"
+            }
+          ]
+        },
+        "highlights": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "affiliation",
+        "endDate",
+        "highlights",
+        "name",
+        "startDate",
+        "url"
+      ],
+      "type": "object"
+    },
+    "Publication": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "releaseDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": ["name", "publisher", "releaseDate", "url"],
+      "type": "object"
+    },
+    "Reference": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": ["name", "reference", "url"],
+      "type": "object"
+    },
+    "Skill": {
+      "properties": {
+        "category": {
+          "type": "string"
         },
         "skills": {
-            "items": {
-                "$ref": "#/definitions/Skill"
-            },
-            "type": "array"
-        },
-        "work": {
-            "items": {
-                "$ref": "#/definitions/Work"
-            },
-            "type": "array"
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
+      },
+      "required": ["category", "skills"],
+      "type": "object"
     },
-    "required": [
-        "affiliations",
-        "awards",
-        "certificates",
-        "education",
-        "interests",
-        "languages",
-        "personal",
-        "projects",
-        "publications",
-        "references",
-        "skills",
-        "work"
-    ],
-    "type": "object"
+    "Work": {
+      "properties": {
+        "endDate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "const": "present",
+              "type": "string"
+            }
+          ]
+        },
+        "highlights": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "location": {
+          "type": "string"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "endDate",
+        "highlights",
+        "location",
+        "organization",
+        "position",
+        "startDate",
+        "url"
+      ],
+      "type": "object"
+    }
+  },
+  "properties": {
+    "affiliations": {
+      "items": {
+        "$ref": "#/definitions/Affiliation"
+      },
+      "type": "array"
+    },
+    "awards": {
+      "items": {
+        "$ref": "#/definitions/Award"
+      },
+      "type": "array"
+    },
+    "certificates": {
+      "items": {
+        "$ref": "#/definitions/Certificate"
+      },
+      "type": "array"
+    },
+    "education": {
+      "items": {
+        "$ref": "#/definitions/Education"
+      },
+      "type": "array"
+    },
+    "interests": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "languages": {
+      "items": {
+        "$ref": "#/definitions/Language"
+      },
+      "type": "array"
+    },
+    "personal": {
+      "properties": {
+        "about": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/Location"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "profiles": {
+          "items": {
+            "$ref": "#/definitions/Profile"
+          },
+          "type": "array"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "about",
+        "avatar",
+        "email",
+        "location",
+        "name",
+        "profiles",
+        "url"
+      ],
+      "type": "object"
+    },
+    "projects": {
+      "items": {
+        "$ref": "#/definitions/Project"
+      },
+      "type": "array"
+    },
+    "publications": {
+      "items": {
+        "$ref": "#/definitions/Publication"
+      },
+      "type": "array"
+    },
+    "references": {
+      "items": {
+        "$ref": "#/definitions/Reference"
+      },
+      "type": "array"
+    },
+    "skills": {
+      "items": {
+        "$ref": "#/definitions/Skill"
+      },
+      "type": "array"
+    },
+    "work": {
+      "items": {
+        "$ref": "#/definitions/Work"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "affiliations",
+    "awards",
+    "certificates",
+    "education",
+    "interests",
+    "languages",
+    "personal",
+    "projects",
+    "publications",
+    "references",
+    "skills",
+    "work"
+  ],
+  "type": "object"
 }
-

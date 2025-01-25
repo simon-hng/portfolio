@@ -23,14 +23,14 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pb-12 md:p-16 print:p-12">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
+      <section className="mx-auto flex w-full max-w-3xl flex-col gap-16 bg-white">
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1 space-y-1.5">
-            <h1 className="text-2xl font-bold">{personal.name}</h1>
-            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
+            <h1 className="text-2xl font-semibold">{personal.name}</h1>
+            <p className="text-muted-foreground max-w-md text-pretty text-sm">
               {personal.about}
             </p>
-            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+            <p className="text-muted-foreground max-w-md items-center text-pretty text-xs">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={`https://www.google.com/maps/place/${personal.location.city}`}
@@ -40,7 +40,7 @@ export default function Page() {
                 {personal.location.city}, {personal.location.country}
               </a>
             </p>
-            <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+            <div className="text-muted-foreground flex gap-x-1 pt-1 text-sm print:hidden">
               {personal.email ? (
                 <Button
                   className="h-8 w-8"
@@ -79,7 +79,7 @@ export default function Page() {
                 </Button>
               ))}
             </div>
-            <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
+            <div className="text-muted-foreground hidden flex-col gap-x-1 font-mono text-sm print:flex">
               {personal.email ? (
                 <a href={`mailto:${personal.email}`}>
                   <span className="underline">{personal.email}</span>
@@ -106,15 +106,15 @@ export default function Page() {
 
         {personal.summary && (
           <Section>
-            <h2 className="text-xl font-bold">About</h2>
-            <p className="text-pretty font-mono text-sm text-muted-foreground">
+            <h2 className="text-xl">About</h2>
+            <p className="text-muted-foreground text-pretty font-mono text-sm">
               {personal.summary}
             </p>
           </Section>
         )}
 
         <Section>
-          <h2 className="text-xl font-bold">Work Experience</h2>
+          <h2 className="text-xl">Work Experience</h2>
           {work.map((work) => (
             <ExperienceCard
               key={`${work.organization}${work.position}`}
@@ -127,7 +127,7 @@ export default function Page() {
         </Section>
 
         <Section>
-          <h2 className="text-xl font-bold">Education</h2>
+          <h2 className="text-xl">Education</h2>
           {education.map((education) => (
             <ExperienceCard
               key={`${education.institution}${education.studyType}`}
@@ -141,7 +141,7 @@ export default function Page() {
         </Section>
 
         <Section>
-          <h2 className="text-xl font-bold">Leadership & Activities</h2>
+          <h2 className="text-xl">Leadership &amp; Activities</h2>
           {affiliations.map((affiliation) => (
             <ExperienceCard
               key={`${affiliation.organization}${affiliation.position}`}
@@ -154,7 +154,7 @@ export default function Page() {
         </Section>
 
         <Section>
-          <h2 className="text-xl font-bold">Honors & Awards</h2>
+          <h2 className="text-xl">Honors &amp; Awards</h2>
           {awards.map((award) => (
             <Card key={`${award.issuer}${award.title}`}>
               <CardHeader>
@@ -187,7 +187,7 @@ export default function Page() {
         </Section>
 
         <Section>
-          <h2 className="text-xl font-bold">Skills</h2>
+          <h2 className="text-xl">Skills</h2>
           <div className="flex flex-wrap gap-1">
             {skills
               .flatMap((skill) => skill.skills)
@@ -199,8 +199,8 @@ export default function Page() {
 
         {!!projects.length && (
           <Section className="print-force-new-page scroll-mb-16">
-            <h2 className="text-xl font-bold">Projects</h2>
-            <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2 print:grid-cols-2 print:gap-2">
+            <h2 className="text-xl">Projects</h2>
+            <div className="-mx-4 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2 print:grid-cols-2 print:gap-2">
               {projects.map((project) => {
                 return (
                   <ProjectCard
