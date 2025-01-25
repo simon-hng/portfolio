@@ -17,7 +17,7 @@ interface Props {
 
 export function ProjectCard({ title, description, tags, link }: Props) {
   return (
-    <Card className="border-muted flex flex-col justify-between gap-6 overflow-hidden rounded-xl border px-4 py-2 pb-0 shadow-sm">
+    <Card className="border-muted flex flex-col justify-between gap-6 overflow-hidden rounded-xl border px-4 py-3 pb-0 shadow-sm">
       <div>
         <CardHeader className="">
           <div className="space-y-1">
@@ -30,7 +30,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
                 {title}
               </a>
             </CardTitle>
-            <div className="hidden  text-xs underline print:visible">
+            <div className="hidden  text-xs underline">
               {link
                 ?.replace("https://", "")
                 .replace("www.", "")
@@ -45,7 +45,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
       </div>
 
       <CardFooter className="overflow-x-auto">
-        <div className="mb-2 flex min-w-0 flex-nowrap gap-2 p-0.5">
+        <div className="mb-3 flex min-w-0 flex-nowrap gap-2 p-0.5">
           {tags?.map((tag) => (
             <Badge variant="secondary" key={tag} className="shrink-0">
               {tag}

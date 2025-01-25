@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pb-12 md:p-16 print:p-12">
-      <section className="mx-auto flex w-full max-w-3xl flex-col gap-16 bg-white">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pb-12 md:p-16">
+      <section className="mx-auto flex w-full max-w-3xl flex-col gap-16">
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-semibold">{personal.name}</h1>
@@ -40,7 +40,7 @@ export default function Page() {
                 {personal.location.city}, {personal.location.country}
               </a>
             </p>
-            <div className="text-muted-foreground flex gap-x-1 pt-1 text-sm print:hidden">
+            <div className="text-muted-foreground flex gap-x-1 pt-1 text-sm">
               {personal.email ? (
                 <Button
                   className="h-8 w-8"
@@ -79,7 +79,7 @@ export default function Page() {
                 </Button>
               ))}
             </div>
-            <div className="text-muted-foreground hidden flex-col gap-x-1 font-mono text-sm print:flex">
+            <div className="text-muted-foreground hidden flex-col gap-x-1 font-mono text-sm">
               {personal.email ? (
                 <a href={`mailto:${personal.email}`}>
                   <span className="underline">{personal.email}</span>
@@ -187,20 +187,28 @@ export default function Page() {
         </Section>
 
         <Section>
-          <h2 className="text-xl">Skills</h2>
-          <div className="flex flex-wrap gap-1">
+          <div>
+            <h2 className="text-xl">Skills</h2>
+            <p className="text-sm text-gray-500">
+              Things I can write hello world in.
+            </p>
+          </div>
+
+          <div className="flex min-w-0 flex-wrap gap-1.5 p-0.5">
             {skills
               .flatMap((skill) => skill.skills)
-              .map((skill) => {
-                return <Badge key={skill}>{skill}</Badge>;
-              })}
+              .map((skill) => (
+                <Badge key={skill} variant="secondary" className="shrink-0">
+                  {skill}
+                </Badge>
+              ))}
           </div>
         </Section>
 
         {!!projects.length && (
-          <Section className="print-force-new-page scroll-mb-16">
+          <Section className="scroll-mb-16">
             <h2 className="text-xl">Projects</h2>
-            <div className="-mx-4 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2 print:grid-cols-2 print:gap-2">
+            <div className="-mx-4 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2">
               {projects.map((project) => {
                 return (
                   <ProjectCard

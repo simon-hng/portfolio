@@ -4,8 +4,8 @@
 #let cvdata = yaml("cv.yml")
 
 #let uservars = (
-    headingfont: "Geist", // Set font for headings
-    bodyfont: "Geist",   // Set font for body
+    headingfont: "Linux Libertine", // Set font for headings
+    bodyfont: "Linux Libertine",   // Set font for body
     fontsize: 9pt, // 10pt, 11pt, 12pt
     linespacing: 6pt,
     showAddress: false, // true/false Show address in contact info

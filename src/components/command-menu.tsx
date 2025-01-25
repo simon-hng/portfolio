@@ -41,7 +41,7 @@ export const CommandMenu = ({ links, email }: Props) => {
         onClick={() => setOpen(true)}
         className="border-t-muted fixed bottom-0 left-0 right-0 w-full border-t bg-white p-1"
       >
-        <p className="text-muted-foreground flex items-center justify-center gap-2 text-sm print:hidden">
+        <p className="text-muted-foreground flex items-center justify-center gap-2 text-sm">
           Open the command menu with
           <kbd className="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100">
             <span className="text-xs">⌘</span>J
