@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pb-12 md:p-16">
+    <main className="relative mx-auto scroll-my-12 overflow-auto p-4 pb-12 md:p-16">
       <section className="mx-auto flex w-full max-w-3xl flex-col gap-16">
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1 space-y-1.5">
@@ -208,7 +208,7 @@ export default function Page() {
         {!!projects.length && (
           <Section className="scroll-mb-16">
             <h2 className="text-xl">Projects</h2>
-            <div className="-mx-4 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3 md:-mx-4 md:grid-cols-2 lg:grid-cols-2">
               {projects.map((project) => {
                 return (
                   <ProjectCard
