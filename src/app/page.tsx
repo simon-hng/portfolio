@@ -1,17 +1,15 @@
 import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
 
-import { Intro } from "./_components/intro";
-
-import { Education } from "./_components/education";
-import { Work } from "./_components/work";
-
-import { HonorsAwards } from "./_components/honors_awards";
+import { CVContent } from "./_components/blur-reveal";
 import { data } from "@/data/resume-data";
-import { Projects } from "./_components/projects";
-import { Skills } from "./_components/skills";
+import { Work } from "./_components/work";
+import { Intro } from "./_components/intro";
 import { LeadershipActivities } from "./_components/leadership_activities";
-import { BlurReveal } from "@/components/blur-reveal";
+import { Education } from "./_components/education";
+import { HonorsAwards } from "./_components/honors_awards";
+import { Skills } from "./_components/skills";
+import { Projects } from "./_components/projects";
 const { personal } = data;
 
 export const metadata: Metadata = {
@@ -21,24 +19,18 @@ export const metadata: Metadata = {
 
 export default function Page() {
   const sections = [
-    Intro,
-    Work,
-    Education,
-    LeadershipActivities,
-    HonorsAwards,
-    Skills,
-    Projects,
+    <Intro key="intro" />,
+    <Work key="work" />,
+    <Education key="education" />,
+    <LeadershipActivities key="leadership" />,
+    <HonorsAwards key="honors" />,
+    <Skills key="skills" />,
+    <Projects key="projects" />,
   ];
 
   return (
     <main className="relative mx-auto scroll-my-12 overflow-auto p-4 pb-12 md:p-16">
-      <div className="mx-auto flex w-full max-w-3xl flex-col gap-16">
-        {sections.map((Section, index) => (
-          <BlurReveal key={`section-${index}`} delay={index * 0.1}>
-            <Section />
-          </BlurReveal>
-        ))}
-      </div>
+      <CVContent sections={sections} />
 
       <CommandMenu
         email={personal.email}
