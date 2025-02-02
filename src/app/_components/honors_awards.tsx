@@ -23,7 +23,7 @@ export const HonorsAwards = () => {
               </div>
             </div>
 
-            <h4 className="font-mono text-sm leading-none">{award.title}</h4>
+            <h4 className="text-sm leading-none">{award.title}</h4>
           </CardHeader>
           <CardContent className="mt-2 text-xs">
             {!!award?.highlights?.length && (

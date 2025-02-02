@@ -53,18 +53,6 @@ export const Intro = () => {
             </Button>
           ))}
         </div>
-        <div className="text-muted-foreground hidden flex-col gap-x-1 font-mono text-sm">
-          {personal.email ? (
-            <a href={`mailto:${personal.email}`}>
-              <span className="underline">{personal.email}</span>
-            </a>
-          ) : null}
-          {personal.phone ? (
-            <a href={`tel:${personal.phone}`}>
-              <span className="underline">{personal.phone}</span>
-            </a>
-          ) : null}
-        </div>
       </div>
 
       <Avatar className="h-28 w-28">
