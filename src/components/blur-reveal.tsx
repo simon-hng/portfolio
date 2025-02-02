@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-interface BlurRevealProps {
+export interface BlurRevealProps {
   children: React.ReactNode;
   duration?: number;
   delay?: number;

@@ -25,9 +25,9 @@ export default function Page() {
   return (
     <main className="relative mx-auto scroll-my-12 overflow-auto p-4 pb-12 md:p-16">
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-16">
-        <div className="flex items-center justify-between gap-4">
-          <BlurReveal>
-            <section className="flex-1 space-y-1.5">
+        <BlurReveal delay={0.25}>
+          <section className="flex items-center justify-between gap-4">
+            <div className="flex-1 space-y-1.5">
               <h1 className="text-2xl font-semibold">{personal.name}</h1>
               <p className="text-muted-foreground max-w-md text-pretty text-sm">
                 {personal.about}
@@ -93,30 +93,21 @@ export default function Page() {
                   </a>
                 ) : null}
               </div>
-            </section>
-          </BlurReveal>
+            </div>
 
-          <Avatar className="h-28 w-28">
-            <AvatarImage alt={personal.name} src={personal.avatar} />
-            <AvatarFallback>
-              {personal.name
-                .split(" ")
-                .map((name: string) => name[0])
-                .join("")}
-            </AvatarFallback>
-          </Avatar>
-        </div>
+            <Avatar className="h-28 w-28">
+              <AvatarImage alt={personal.name} src={personal.avatar} />
+              <AvatarFallback>
+                {personal.name
+                  .split(" ")
+                  .map((name: string) => name[0])
+                  .join("")}
+              </AvatarFallback>
+            </Avatar>
+          </section>
+        </BlurReveal>
 
-        {personal.summary && (
-          <Section>
-            <h2 className="text-xl">About</h2>
-            <p className="text-muted-foreground text-pretty font-mono text-sm">
-              {personal.summary}
-            </p>
-          </Section>
-        )}
-
-        <Section>
+        <Section delay={0.25}>
           <h2 className="text-xl">Work Experience</h2>
           {work.map((work) => (
             <ExperienceCard
@@ -129,7 +120,7 @@ export default function Page() {
           ))}
         </Section>
 
-        <Section>
+        <Section delay={0.5}>
           <h2 className="text-xl">Education</h2>
           {education.map((education) => (
             <ExperienceCard
@@ -143,7 +134,7 @@ export default function Page() {
           ))}
         </Section>
 
-        <Section>
+        <Section delay={0.75}>
           <h2 className="text-xl">Leadership &amp; Activities</h2>
           {affiliations.map((affiliation) => (
             <ExperienceCard
