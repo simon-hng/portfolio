@@ -63,15 +63,15 @@ work:
   #     - Key contributor to Everbay, a recruiting platform, implementing features with NestJS, React, and GraphQL.
   #     - Enhanced developer tooling, CI/CD pipelines, and overall code quality.
 
-  # - organization: Siemens
-  #   position: Working Student – Software Engineer
-  #   url: https://www.siemens.com/
-  #   location: Munich
-  #   startDate: 2021-11-01T00:00:00Z
-  #   endDate: 2023-09-30T00:00:00Z
-  #   highlights:
-  #     - Led frontend development for an internal service tool using React and NextJS.
-  #     - Implemented GitLab CI/CD for continuous integration and deployment.
+  - organization: Siemens
+    position: Working Student – Software Engineer
+    url: https://www.siemens.com/
+    location: Munich
+    startDate: 2021-11-01T00:00:00Z
+    endDate: 2023-09-30T00:00:00Z
+    highlights:
+      - Led frontend development for an internal service tool using React and NextJS.
+      - Implemented GitLab CI/CD for continuous integration and deployment.
 
   - organization: Technical University of Munich
     position: Teaching Assistant
