@@ -3,7 +3,7 @@
 personal:
   avatar: https://avatars.githubusercontent.com/u/25489463?v=4
   name: Simon Huang
-  about: "M.Sc. Informatics student at TUM"
+  about: "M.Sc. Computer Science student at TUM"
   email: hello@simonhng.dev
   url: https://simonhng.dev
   location:
@@ -30,11 +30,11 @@ work:
     startDate: 2024-10-01T00:00:00Z
     endDate: "present"
     highlights:
-      - Building a customer support platform for B2B SaaS companies, serving clients such as Clerk, Mintlify and Flightcontrol.
+      - Building a customer support platform for B2B SaaS companies, serving clients such as Clerk, Mintlify, Tacto and Flightcontrol.
 
   # - organization: SIXT
   #   position: University Project – iOS developer
-  #   url: https://allquiet.app/
+  #   url: https://www.sixt.de/
   #   location: Munich
   #   startDate: 2024-04-01T00:00:00Z
   #   endDate: 2024-07-01T00:00:00Z
@@ -53,15 +53,15 @@ work:
       - First hire at a SaaS startup focused on simplifying incident escalation, serving clients such as MistralAI, Groupon, and Paradox.
       - Developed features across web app, backend, and native Android and iOS applications, enhancing user experience and functionality.
 
-  # - organization: SelectCode
-  #   position: Working Student – Full Stack Developer
-  #   url: https://www.selectcode.de/
-  #   location: Munich
-  #   startDate: 2023-10-01T00:00:00Z
-  #   endDate: 2024-04-01T00:00:00Z
-  #   highlights:
-  #     - Key contributor to Everbay, a recruiting platform, implementing features with NestJS, React, and GraphQL.
-  #     - Enhanced developer tooling, CI/CD pipelines, and overall code quality.
+  - organization: SelectCode
+    position: Working Student – Full Stack Developer
+    url: https://www.selectcode.de/
+    location: Munich
+    startDate: 2023-10-01T00:00:00Z
+    endDate: 2024-04-01T00:00:00Z
+    highlights:
+      - Key contributor to Everbay, a recruiting platform, implementing features with NestJS, React, and GraphQL.
+      - Enhanced developer tooling, CI/CD pipelines, and overall code quality.
 
   - organization: Siemens
     position: Working Student – Software Engineer
@@ -80,8 +80,8 @@ work:
     startDate: 2020-10-01T00:00:00Z
     endDate: 2021-10-31T00:00:00Z
     highlights:
-      - Tutored students in math preparation, programming, and software engineering courses.
-      - Mentored students, simplifying complex concepts in programming and software engineering.
+      - Led tutorial sessions for 30+ students in mathematics, programming fundamentals, and software engineering
+      - Developed and delivered engaging teaching materials to help students master complex programming concepts and design patterns
 
   # - organization: olli design
   #   position: Web Developer
@@ -96,7 +96,7 @@ work:
 education:
   - institution: Technical University of Munich
     url: https://www.tum.de/
-    area: Informatics
+    area: Computer Science
     studyType: Master of Science
     startDate: 2023-10-01T00:00:00Z
     honors: []
@@ -108,7 +108,7 @@ education:
 
   - institution: Technical University of Munich
     url: https://www.tum.de/
-    area: Informatics
+    area: Computer Science
     studyType: Bachelor of Science
     startDate: 2019-10-01T00:00:00Z
     honors: []
@@ -117,7 +117,7 @@ education:
     location: Munich
     highlights:
       - Application subject mathematics.
-      - "Thesis: Learning Analytics of Grading Programming Exercises."
+      - "Thesis in applied Software Engineering: Learning Analytics of Grading Programming Exercises."
 
 #  - institution: Klosterschule
 #    url: https://klosterschule-hamburg.de/
@@ -147,23 +147,33 @@ affiliations:
     position: Organizer
     location: Munich
     url: https://gdg.community.dev/gdg-on-campus-technical-university-of-munich-munich-germany/
-    startDate: 2024-10-01T00:00:00Z
+    startDate: 2023-10-01T00:00:00Z
     endDate: "present"
     highlights:
       - Coordinated and executed events and workshops about both technical and non-technical topics.
-      - Led a team of 5 in collaboration with local companies such as JetBrains and CHECK24.
+      - Led a team of 5 in collaboration with local companies such as Interhyp, JetBrains and CHECK24.
 
-  - organization: Google Developer Student Club
-    position: Core Team Member
-    location: Munich
-    url: https://gdg.community.dev/gdg-on-campus-technical-university-of-munich-munich-germany/
-    startDate: 2023-10-01T00:00:00Z
-    endDate: 2024-10-01T00:00:00Z
-    highlights:
-      - Organized events and workshops, enhancing technical and communication skills.
+  # - organization: Google Developer Groups on Campus TUM
+  #   position: Organizer
+  #   location: Munich
+  #   url: https://gdg.community.dev/gdg-on-campus-technical-university-of-munich-munich-germany/
+  #   startDate: 2024-10-01T00:00:00Z
+  #   endDate: "present"
+  #   highlights:
+  #     - Coordinated and executed events and workshops about both technical and non-technical topics.
+  #     - Led a team of 5 in collaboration with local companies such as JetBrains and CHECK24.
+  #
+  # - organization: Google Developer Student Club
+  #   position: Core Team Member
+  #   location: Munich
+  #   url: https://gdg.community.dev/gdg-on-campus-technical-university-of-munich-munich-germany/
+  #   startDate: 2023-10-01T00:00:00Z
+  #   endDate: 2024-10-01T00:00:00Z
+  #   highlights:
+  #     - Organized events and workshops, enhancing technical and communication skills.
 
 awards:
-  - title: "TUM Hackathon at Microsoft: Using LLMs to improve the student support at TUM"
+  - title: "Microsoft Hackathon: Using LLMs to improve the student support at TUM"
     date: 2023-12-03T00:00:00Z
     issuer: Microsoft
     url: https://gamma.app/public/LLMs-for-Student-Support-TUM-x-Microsoft-Hackathon-0ws34zwd187rss1?mode=doc
@@ -171,7 +181,7 @@ awards:
     highlights:
       - First place for creating an LLM solution with both chatbot and email support.
 
-  - title: "hackaTUM Solana Challenge"
+  - title: "Solana hackaTUM Challenge"
     date: 2023-11-19T00:00:00Z
     issuer: Solana
     url: https://hack.tum.de/
@@ -200,19 +210,24 @@ skills:
       - Linear
       - Figma
       - React
-      - Node.js
       - Svelte and Sveltekit
-      - TailwindCSS
+      - Postgres
+      - Redis
       - .NET
       - Spring Boot
+  - category: Hobbies
+    skills:
+      - Reading philosophy and literature
+      - Cooking
+      - Playing piano
 
 languages:
   - language: English
     fluency: "C1: Advanced"
   - language: German
-    fluency: Native speaker
+    fluency: Native
   - language: Chinese
-    fluency: "Native"
+    fluency: Native speaker
 
 projects:
   - name: CV website
