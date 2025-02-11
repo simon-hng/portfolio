@@ -15,6 +15,7 @@ export const Skills = () => {
 
       <div className="flex min-w-0 flex-wrap gap-1.5 p-0.5">
         {skills
+          .filter((skill) => skill.category !== "Hobbies")
           .flatMap((skill) => skill.skills)
           .map((skill) => (
             <Badge key={skill} variant="secondary" className="shrink-0">
