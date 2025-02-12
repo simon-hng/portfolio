@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/command";
 import { Profile } from "@/data/resume-schema";
 import { SocialIcon } from "./social-icon";
-import { Briefcase, FileText, Flame } from "lucide-react";
+import { FileText, Heart } from "lucide-react";
 import { DialogDescription, DialogTitle } from "./ui/dialog";
 
 interface Props {
@@ -54,7 +54,7 @@ export const CommandMenu = ({ links, email }: Props) => {
           >
             <span className="flex gap-2">
               <FileText />
-              Print
+              Print CV
             </span>
           </CommandItem>
 
@@ -65,33 +65,14 @@ export const CommandMenu = ({ links, email }: Props) => {
                   setOpen(false);
                   window.open(
                     `mailto:${email}?subject=${encodeURIComponent(
-                      "You're hired",
-                    )}&${encodeURIComponent(
-                      "I love your CV and I want to see you.",
+                      "Hello from your website!",
                     )}`,
                   );
                 }}
               >
                 <span className="flex gap-2">
-                  <Briefcase />
-                  Hire me
-                </span>
-              </CommandItem>
-              <CommandItem
-                onSelect={() => {
-                  setOpen(false);
-                  window.open(
-                    `mailto:${email}?subject=${encodeURIComponent(
-                      "You're fired",
-                    )}&${encodeURIComponent(
-                      "I hate your CV and I never want to see you again.",
-                    )}`,
-                  );
-                }}
-              >
-                <span className="flex gap-2">
-                  <Flame />
-                  Fire me
+                  <Heart />
+                  Say hello
                 </span>
               </CommandItem>
             </>

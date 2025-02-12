@@ -31,6 +31,7 @@ work:
     endDate: "present"
     highlights:
       - Building a customer support platform for B2B SaaS companies, serving clients such as Clerk, Mintlify, Tacto and Flightcontrol.
+      - Improved latency of roadmap feature by 86% through query optimization and database indexing, resulting in enhanced user experience.
 
   # - organization: SIXT
   #   position: University Project – iOS developer
@@ -61,7 +62,7 @@ work:
     endDate: 2024-04-01T00:00:00Z
     highlights:
       - Key contributor to Everbay, a recruiting platform, implementing features with NestJS, React, and GraphQL.
-      - Enhanced developer tooling, CI/CD pipelines, and overall code quality.
+      - Improved developer productivity by implementing automated testing, CI/CD pipelines, and establishing code quality standards.
 
   - organization: Siemens
     position: Working Student – Software Engineer
@@ -71,7 +72,7 @@ work:
     endDate: 2023-09-30T00:00:00Z
     highlights:
       - Led frontend development for an internal service tool using React and NextJS.
-      - Implemented GitLab CI/CD for continuous integration and deployment.
+      - Established automated deployment workflows with GitLab CI/CD, improving code quality through automated testing.
 
   - organization: Technical University of Munich
     position: Teaching Assistant
@@ -80,8 +81,8 @@ work:
     startDate: 2020-10-01T00:00:00Z
     endDate: 2021-10-31T00:00:00Z
     highlights:
-      - Led tutorial sessions for 30+ students in mathematics, programming fundamentals, and software engineering
-      - Developed and delivered engaging teaching materials to help students master complex programming concepts and design patterns
+      - Led tutorial sessions for 30+ students in mathematics, programming fundamentals, and software engineering.
+      - Developed and delivered engaging teaching materials to help students master complex programming concepts and design patterns.
 
   # - organization: olli design
   #   position: Web Developer
@@ -140,7 +141,7 @@ affiliations:
     endDate: "present"
     highlights:
       - Led projects implementing a brand and design system, and a comprehensive review tool for efficient applicant evaluation.
-      - Gathered requirements from stakeholders in academia and industry.
+      # - Gathered requirements from stakeholders in academia and industry.
       - Oversaw system design, cloud infrastructure, and project coordination.
 
   - organization: Google Developer Groups on Campus TUM
@@ -179,7 +180,7 @@ awards:
     url: https://gamma.app/public/LLMs-for-Student-Support-TUM-x-Microsoft-Hackathon-0ws34zwd187rss1?mode=doc
     location: Munich
     highlights:
-      - First place for creating an LLM solution with both chatbot and email support.
+      - First place for creating an LLM/RAG solution with both chatbot and email support.
 
   - title: "Solana hackaTUM Challenge"
     date: 2023-11-19T00:00:00Z
@@ -206,6 +207,7 @@ skills:
       - R
   - category: Tools, Frameworks and Libraries
     skills:
+      - Nvim
       - Next.js
       - Linear
       - Figma
@@ -217,7 +219,7 @@ skills:
       - Spring Boot
   - category: Hobbies
     skills:
-      - Reading philosophy and literature
+      - Reading classical literature and philosophy
       - Cooking
       - Playing piano
 
