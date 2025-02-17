@@ -1,17 +1,25 @@
-import { kv } from "@vercel/kv";
+import { createClient } from "redis";
 import { NextResponse } from "next/server";
 
+// Create Redis client
+const getRedisClient = async () => {
+  const client = createClient({
+    url: process.env.REDIS_URL,
+  });
+
+  client.on("error", (err) => console.error("Redis Client Error", err));
+
+  if (!client.isOpen) {
+    await client.connect();
+  }
+
+  return client;
+};
+
 export async function POST(request: Request) {
+  let redis;
   try {
-    console.log(
-      "Incoming request headers:",
-      Object.fromEntries(request.headers),
-    );
-    const clonedRequest = request.clone();
-    const rawBody = await clonedRequest.text();
-    console.log("Raw request body:", rawBody);
-    // Verify the request is coming from your Cloudflare Worker
-    // You might want to add authentication here
+    redis = await getRedisClient();
 
     let message;
     const contentType = request.headers.get("content-type");
@@ -46,9 +54,16 @@ export async function POST(request: Request) {
     };
 
     // Store in Redis
-    // Using the timestamp as a unique identifier in the key
     const key = `email:${emailData.timestamp}`;
-    await kv.set(key, emailData);
+
+    // Store the email data as a JSON string
+    await redis.set(key, JSON.stringify(emailData));
+
+    // Add to a sorted set for easy retrieval by timestamp
+    await redis.zAdd("emails", {
+      score: emailData.timestamp,
+      value: key,
+    });
 
     return NextResponse.json(
       { message: "Email stored successfully" },
@@ -60,5 +75,10 @@ export async function POST(request: Request) {
       { error: "Internal server error" },
       { status: 500 },
     );
+  } finally {
+    // Clean up Redis connection
+    if (redis) {
+      await redis.quit();
+    }
   }
 }
