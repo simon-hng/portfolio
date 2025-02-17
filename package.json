@@ -22,6 +22,7 @@
     "@tailwindcss/postcss": "^4.0.0",
     "@types/js-yaml": "^4.0.9",
     "@vercel/analytics": "^1.4.1",
+    "@vercel/kv": "^3.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.4",
