@@ -23,12 +23,21 @@ personal:
       url: https://leetcode.com/simon-hng
 
 work:
+  - organization: Forgent AI
+    position: Founding Engineer
+    url: https://forgent.ai/
+    location: Berlin / London
+    startDate: 2025-04-01T00:00:00Z
+    endDate: "present"
+    highlights:
+      - Building domain specific AI agents for public sector contracts
+
   - organization: Productlane
     position: Working Student – Founding Engineer
     url: https://productlane.com/
     location: Munich
     startDate: 2024-10-01T00:00:00Z
-    endDate: "present"
+    endDate: 2025-04-01T00:00:00Z
     highlights:
       - Building a customer support platform for B2B SaaS companies, serving clients such as Clerk, Mintlify, Tacto and Flightcontrol.
       - Improved latency of roadmap feature by 86% through query optimization and database indexing, resulting in enhanced user experience.
@@ -74,15 +83,15 @@ work:
       - Led frontend development for an internal service tool using React and NextJS.
       - Established automated deployment workflows with GitLab CI/CD, improving code quality through automated testing.
 
-  - organization: Technical University of Munich
-    position: Teaching Assistant
-    url: https://www.tum.de/
-    location: Munich
-    startDate: 2020-10-01T00:00:00Z
-    endDate: 2021-10-31T00:00:00Z
-    highlights:
-      - Led tutorial sessions for 30+ students in mathematics, programming fundamentals, and software engineering.
-      - Developed and delivered engaging teaching materials to help students master complex programming concepts and design patterns.
+  # - organization: Technical University of Munich
+  #   position: Teaching Assistant
+  #   url: https://www.tum.de/
+  #   location: Munich
+  #   startDate: 2020-10-01T00:00:00Z
+  #   endDate: 2021-10-31T00:00:00Z
+  #   highlights:
+  #     - Led tutorial sessions for 30+ students in mathematics, programming fundamentals, and software engineering.
+  #     - Developed and delivered engaging teaching materials to help students master complex programming concepts and design patterns.
 
   # - organization: olli design
   #   position: Web Developer
@@ -149,7 +158,7 @@ affiliations:
     location: Munich
     url: https://gdg.community.dev/gdg-on-campus-technical-university-of-munich-munich-germany/
     startDate: 2023-10-01T00:00:00Z
-    endDate: "present"
+    endDate: 2025-08-01T00:00:00Z
     highlights:
       - Coordinated and executed events and workshops about both technical and non-technical topics.
       - Led a team of 5 in collaboration with local companies such as Interhyp, JetBrains and CHECK24.
@@ -169,7 +178,7 @@ affiliations:
   #   location: Munich
   #   url: https://gdg.community.dev/gdg-on-campus-technical-university-of-munich-munich-germany/
   #   startDate: 2023-10-01T00:00:00Z
-  #   endDate: 2024-10-01T00:00:00Z
+  #   endDate
   #   highlights:
   #     - Organized events and workshops, enhancing technical and communication skills.
 
