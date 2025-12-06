@@ -5,6 +5,8 @@
 /* @custom-variant dark (&:is(.dark *)); */
 
 @theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -102,36 +104,257 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    
+    /* Terminal colors */
+    --terminal-green: 142 71% 45%;
+    --terminal-amber: 38 92% 50%;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --background: 220 20% 4%;
+    --foreground: 0 0% 95%;
+    --card: 220 20% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 20% 6%;
+    --popover-foreground: 0 0% 95%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 220 15% 12%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 220 15% 12%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 220 10% 70%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    
+    /* Terminal colors */
+    --terminal-green: 142 71% 45%;
+    --terminal-amber: 38 92% 50%;
   }
 }
 
 .print-force-new-page {
   page-break-before: always;
+}
+
+/* ========================================
+   ASCII Background Styles
+   ======================================== */
+
+.ascii-background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+}
+
+.dark .ascii-background {
+  opacity: 0.05;
+}
+
+.ascii-content {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.2;
+  color: currentColor;
+  white-space: pre;
+  user-select: none;
+}
+
+/* Fade effect at edges */
+.ascii-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 40%,
+    hsl(var(--background)) 80%
+  );
+  pointer-events: none;
+}
+
+/* ========================================
+   Terminal Styles
+   ======================================== */
+
+.terminal-container {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 1.5rem;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .terminal-container {
+    padding: 2rem 3rem;
+    font-size: 15px;
+  }
+}
+
+.terminal-welcome {
+  color: hsl(var(--terminal-green));
+  margin-bottom: 1.5rem;
+}
+
+.terminal-entry {
+  margin-bottom: 1rem;
+}
+
+.terminal-prompt,
+.terminal-input-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+
+.terminal-user {
+  color: hsl(var(--terminal-green));
+  font-weight: 600;
+}
+
+.terminal-at {
+  color: hsl(var(--muted-foreground));
+}
+
+.terminal-host {
+  color: hsl(142 71% 65%);
+}
+
+.terminal-separator {
+  color: hsl(var(--muted-foreground));
+}
+
+.terminal-path {
+  color: hsl(217 91% 60%);
+  font-weight: 600;
+}
+
+.terminal-dollar {
+  color: hsl(var(--muted-foreground));
+  margin-left: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.terminal-command {
+  color: hsl(var(--foreground));
+}
+
+.terminal-output {
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: hsl(var(--foreground));
+  margin-top: 0.5rem;
+  padding-left: 0;
+}
+
+.terminal-error {
+  color: hsl(0 84% 60%);
+}
+
+.terminal-input-line {
+  margin-top: 0.5rem;
+}
+
+.terminal-input {
+  flex: 1;
+  min-width: 200px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: hsl(var(--foreground));
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: hsl(var(--terminal-green));
+}
+
+.terminal-input::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Blinking cursor */
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background: hsl(var(--terminal-green));
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Hide cursor when input is focused (browser shows its own) */
+.terminal-input:focus + .terminal-cursor {
+  display: none;
+}
+
+/* Subtle scanline effect (optional) */
+.terminal-container::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.015) 2px,
+    rgba(0, 0, 0, 0.015) 4px
+  );
+  z-index: 100;
+}
+
+.dark .terminal-container::after {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.008) 2px,
+    rgba(255, 255, 255, 0.008) 4px
+  );
+}
+
+/* Custom scrollbar for terminal */
+.terminal-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-container::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+.terminal-container::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
 }
