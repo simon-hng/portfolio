@@ -60,10 +60,10 @@ export function GamePortfolio({ data }: GamePortfolioProps) {
   const currentTitle = currentJob ? `${currentJob.position}` : undefined;
 
   return (
-    <div className="game-container">
+    <div className="font-pixel min-h-screen bg-linear-to-b from-[hsl(230_25%_6%)] to-[hsl(230_25%_10%)] p-4 pb-20 relative overflow-x-hidden">
       {/* Header */}
       <div className="text-center mb-4">
-        <p className="game-text-xs text-gray-600">
+        <p className="text-[0.4rem] leading-relaxed text-gray-600">
           Scroll or tap to navigate
         </p>
       </div>
@@ -96,4 +96,3 @@ export function GamePortfolio({ data }: GamePortfolioProps) {
     </div>
   );
 }
-

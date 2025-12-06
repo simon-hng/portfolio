@@ -57,10 +57,11 @@ export function AsciiBackground() {
   }, [dimensions]);
 
   return (
-    <div className="ascii-background" aria-hidden="true">
-      <pre className="ascii-content">{pattern}</pre>
+    <div 
+      className="fixed inset-0 overflow-hidden pointer-events-none z-0 opacity-[0.03] dark:opacity-[0.05] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_40%,hsl(var(--background))_80%)] before:pointer-events-none"
+      aria-hidden="true"
+    >
+      <pre className="font-mono text-[10px] leading-tight text-current whitespace-pre select-none">{pattern}</pre>
     </div>
   );
 }
-
-

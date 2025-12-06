@@ -41,14 +41,29 @@ const languageLevels: Record<string, number> = {
   "B2: Upper Intermediate": 70,
 };
 
-const barColors = [
-  "bg-game-cyan",
-  "bg-game-green",
-  "bg-game-yellow",
-  "bg-game-magenta",
-  "bg-game-blue",
-  "bg-game-orange",
-];
+// Section title component with decorative lines
+function SectionTitle({ children, icon: Icon, color }: { children: React.ReactNode; icon: React.ComponentType<{ className?: string }>; color?: string }) {
+  return (
+    <h2 className={`text-[0.5rem] tracking-wide uppercase mb-3 flex items-center gap-2 opacity-70 ${color || "text-[hsl(142_71%_45%)]"}`}>
+      <span className="flex-1 h-px bg-[hsl(220_10%_20%)]" />
+      <Icon className="w-3 h-3" />
+      <span>{children}</span>
+      <span className="flex-1 h-px bg-[hsl(220_10%_20%)]" />
+    </h2>
+  );
+}
+
+// Stat bar component
+function StatBar({ value }: { value: number }) {
+  return (
+    <div className="h-2 bg-[hsl(220_15%_10%)] border border-[hsl(220_10%_20%)] relative overflow-hidden">
+      <div
+        className="h-full bg-[hsl(142_71%_45%)] opacity-70 transition-[width] duration-500 ease-out"
+        style={{ width: `${value}%` }}
+      />
+    </div>
+  );
+}
 
 export function StatsPanel({ skills, languages }: StatsPanelProps) {
   const programmingSkills = skills.find(s => s.category === "Programming")?.skills || [];
@@ -57,44 +72,37 @@ export function StatsPanel({ skills, languages }: StatsPanelProps) {
   return (
     <div className="space-y-4">
       {/* Programming Skills */}
-      <div className="game-panel pixel-border">
-        <h2 className="game-section-title text-game-cyan">
-          <Zap className="w-3 h-3" />
-          <span>Abilities</span>
-        </h2>
+      <div className="bg-[hsl(220_15%_10%)] p-4 mb-4 border border-[hsl(220_10%_20%)]">
+        <SectionTitle icon={Zap} color="text-[hsl(142_71%_45%)]">Abilities</SectionTitle>
         
         <div className="space-y-2">
-          {programmingSkills.slice(0, 6).map((skill, index) => (
+          {programmingSkills.slice(0, 6).map((skill) => (
             <div key={skill}>
               <div className="flex justify-between items-center mb-1">
-                <span className="game-text-xs text-gray-300">{skill}</span>
-                <span className="game-text-xs text-game-yellow">
+                <span className="text-[0.4rem] leading-relaxed text-gray-300">{skill}</span>
+                <span className="text-[0.4rem] leading-relaxed text-[hsl(142_60%_50%)]">
                   {skillLevels[skill] || 70}
                 </span>
               </div>
-              <div className="stat-bar">
-                <div
-                  className={`stat-bar-fill ${barColors[index % barColors.length]}`}
-                  style={{ width: `${skillLevels[skill] || 70}%` }}
-                />
-              </div>
+              <StatBar value={skillLevels[skill] || 70} />
             </div>
           ))}
         </div>
       </div>
 
       {/* Tools & Frameworks */}
-      <div className="game-panel pixel-border">
-        <h2 className="game-section-title text-game-magenta">
-          <Wrench className="w-3 h-3" />
-          <span>Equipment</span>
-        </h2>
+      <div className="bg-[hsl(220_15%_10%)] p-4 mb-4 border border-[hsl(220_10%_20%)]">
+        <SectionTitle icon={Wrench} color="text-[hsl(142_50%_35%)]">Equipment</SectionTitle>
         
         <div className="flex flex-wrap gap-1">
           {toolsSkills.map((skill, index) => (
             <span
               key={skill}
-              className={`skill-tag ${index < 3 ? "border-game-yellow text-game-yellow" : ""}`}
+              className={`inline-block px-2 py-1 text-[0.4rem] bg-transparent border border-[hsl(220_10%_20%)] m-0.5 ${
+                index < 3 
+                  ? "border-[hsl(142_60%_50%)] text-[hsl(142_60%_50%)]" 
+                  : "text-[hsl(0_0%_60%)]"
+              }`}
             >
               {skill}
             </span>
@@ -103,25 +111,17 @@ export function StatsPanel({ skills, languages }: StatsPanelProps) {
       </div>
 
       {/* Languages */}
-      <div className="game-panel pixel-border">
-        <h2 className="game-section-title text-game-green">
-          <MessageCircle className="w-3 h-3" />
-          <span>Languages</span>
-        </h2>
+      <div className="bg-[hsl(220_15%_10%)] p-4 mb-4 border border-[hsl(220_10%_20%)]">
+        <SectionTitle icon={MessageCircle} color="text-[hsl(142_71%_45%)]">Languages</SectionTitle>
         
         <div className="space-y-2">
           {languages.map((lang) => (
             <div key={lang.language}>
               <div className="flex justify-between items-center mb-1">
-                <span className="game-text-xs text-gray-300">{lang.language}</span>
-                <span className="game-text-xs text-game-cyan">{lang.fluency}</span>
+                <span className="text-[0.4rem] leading-relaxed text-gray-300">{lang.language}</span>
+                <span className="text-[0.4rem] leading-relaxed text-[hsl(142_71%_45%)]">{lang.fluency}</span>
               </div>
-              <div className="stat-bar">
-                <div
-                  className="stat-bar-fill bg-game-green"
-                  style={{ width: `${languageLevels[lang.fluency] || 70}%` }}
-                />
-              </div>
+              <StatBar value={languageLevels[lang.fluency] || 70} />
             </div>
           ))}
         </div>
@@ -129,4 +129,3 @@ export function StatsPanel({ skills, languages }: StatsPanelProps) {
     </div>
   );
 }
-
