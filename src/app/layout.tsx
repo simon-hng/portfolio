@@ -6,6 +6,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import React from "react";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Nav } from "@/components/nav";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -26,6 +27,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Nav />
           {children}
         </ThemeProvider>
       </body>
