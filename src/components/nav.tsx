@@ -25,7 +25,7 @@ export function Nav() {
   };
 
   return (
-    <nav className="nav-container">
+    <nav className="nav-container hidden md:block">
       <div className="nav-inner">
         {navItems.map((item) => {
           const isActive = pathname === item.href;

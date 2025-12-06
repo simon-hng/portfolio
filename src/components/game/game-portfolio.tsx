@@ -1,0 +1,105 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import type { CurriculumVitae } from "@/data/resume-schema";
+import { CharacterCard } from "./character-card";
+import { StatsPanel } from "./stats-panel";
+import { QuestLog } from "./quest-log";
+import { Inventory } from "./inventory";
+import { Achievements } from "./achievements";
+import { GameNav } from "./game-nav";
+
+interface GamePortfolioProps {
+  data: CurriculumVitae;
+}
+
+export function GamePortfolio({ data }: GamePortfolioProps) {
+  const [activeSection, setActiveSection] = useState("quests");
+  
+  const statsRef = useRef<HTMLDivElement>(null);
+  const questsRef = useRef<HTMLDivElement>(null);
+  const itemsRef = useRef<HTMLDivElement>(null);
+  const trophiesRef = useRef<HTMLDivElement>(null);
+
+  const refs: Record<string, React.RefObject<HTMLDivElement | null>> = {
+    stats: statsRef,
+    quests: questsRef,
+    items: itemsRef,
+    trophies: trophiesRef,
+  };
+
+  const handleSectionChange = (section: string) => {
+    setActiveSection(section);
+    refs[section]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Update active section based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["quests", "stats", "items", "trophies"];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = refs[section]?.current;
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Get current job title for character card
+  const currentJob = data.work.find(w => w.endDate === "present");
+  const currentTitle = currentJob ? `${currentJob.position}` : undefined;
+
+  return (
+    <div className="game-container">
+      {/* Scanline effect */}
+      <div className="game-scanlines" />
+      
+      {/* Header with title */}
+      <div className="text-center mb-4 game-flicker">
+        <h1 className="game-text-base text-game-cyan mb-1">
+          ═══ PORTFOLIO ═══
+        </h1>
+        <p className="game-text-xs text-gray-500">
+          Press buttons to navigate
+        </p>
+      </div>
+
+      {/* Character Card - Always visible at top */}
+      <CharacterCard personal={data.personal} currentTitle={currentTitle} />
+
+      {/* Quests Section */}
+      <section ref={questsRef} id="quests" className="scroll-mt-4 mt-4">
+        <QuestLog work={data.work} affiliations={data.affiliations} />
+      </section>
+
+      {/* Stats Section */}
+      <section ref={statsRef} id="stats" className="scroll-mt-4 mt-4">
+        <StatsPanel skills={data.skills} languages={data.languages} />
+      </section>
+
+      {/* Items Section */}
+      <section ref={itemsRef} id="items" className="scroll-mt-4 mt-4">
+        <Inventory projects={data.projects} />
+      </section>
+
+      {/* Trophies Section */}
+      <section ref={trophiesRef} id="trophies" className="scroll-mt-4 mt-4">
+        <Achievements awards={data.awards} education={data.education} />
+      </section>
+
+      {/* Bottom Navigation */}
+      <GameNav activeSection={activeSection} onSectionChange={handleSectionChange} />
+    </div>
+  );
+}
+

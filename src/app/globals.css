@@ -7,6 +7,7 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-pixel: var(--font-pixel), "Press Start 2P", monospace;
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -108,6 +109,19 @@
     /* Terminal colors */
     --terminal-green: 142 71% 45%;
     --terminal-amber: 38 92% 50%;
+    
+    /* 8-bit Game colors */
+    --game-bg: 230 25% 8%;
+    --game-panel: 230 20% 12%;
+    --game-border: 230 15% 25%;
+    --game-cyan: 180 100% 50%;
+    --game-magenta: 300 100% 60%;
+    --game-yellow: 50 100% 50%;
+    --game-green: 120 100% 40%;
+    --game-red: 0 100% 50%;
+    --game-blue: 210 100% 60%;
+    --game-orange: 30 100% 50%;
+    --game-purple: 270 100% 65%;
   }
 
   .dark {
@@ -449,3 +463,342 @@
   background: hsl(var(--border));
   margin: 0 0.25rem;
 }
+
+/* ========================================
+   8-bit Game Styles
+   ======================================== */
+
+.game-container {
+  font-family: var(--font-pixel);
+  min-height: 100vh;
+  background: linear-gradient(180deg, hsl(230 25% 6%) 0%, hsl(230 25% 10%) 100%);
+  padding: 1rem;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Pixel border mixin via box-shadow */
+.pixel-border {
+  border: 4px solid hsl(var(--game-border));
+  box-shadow:
+    4px 4px 0 0 hsl(var(--game-border)),
+    -4px -4px 0 0 hsl(230 15% 35%),
+    inset 2px 2px 0 0 hsl(230 15% 20%);
+}
+
+.pixel-border-cyan {
+  border-color: hsl(var(--game-cyan));
+  box-shadow:
+    4px 4px 0 0 hsl(180 100% 30%),
+    inset 2px 2px 0 0 hsl(180 100% 70%);
+}
+
+.pixel-border-yellow {
+  border-color: hsl(var(--game-yellow));
+  box-shadow:
+    4px 4px 0 0 hsl(50 100% 30%),
+    inset 2px 2px 0 0 hsl(50 100% 70%);
+}
+
+.pixel-border-magenta {
+  border-color: hsl(var(--game-magenta));
+  box-shadow:
+    4px 4px 0 0 hsl(300 100% 40%),
+    inset 2px 2px 0 0 hsl(300 100% 80%);
+}
+
+.pixel-border-green {
+  border-color: hsl(var(--game-green));
+  box-shadow:
+    4px 4px 0 0 hsl(120 100% 25%),
+    inset 2px 2px 0 0 hsl(120 100% 60%);
+}
+
+/* Game Panel */
+.game-panel {
+  background: hsl(var(--game-panel));
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Section Title */
+.game-section-title {
+  font-size: 0.625rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.game-section-title::before,
+.game-section-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+/* Stat Bar */
+.stat-bar {
+  height: 12px;
+  background: hsl(230 20% 15%);
+  border: 2px solid hsl(var(--game-border));
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  transition: width 0.5s ease-out;
+}
+
+.stat-bar-segments {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.stat-bar-segments::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 8px,
+    hsl(230 20% 10% / 0.5) 8px,
+    hsl(230 20% 10% / 0.5) 10px
+  );
+}
+
+/* Quest Item */
+.quest-item {
+  padding: 0.75rem;
+  background: hsl(230 20% 8%);
+  border-left: 3px solid hsl(var(--game-cyan));
+  margin-bottom: 0.5rem;
+  transition: all 0.2s;
+}
+
+.quest-item:hover {
+  background: hsl(230 20% 10%);
+  border-left-color: hsl(var(--game-yellow));
+}
+
+.quest-item.active {
+  border-left-color: hsl(var(--game-green));
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--game-green) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px hsl(var(--game-green) / 0.6);
+  }
+}
+
+/* Inventory Grid */
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.inventory-item {
+  aspect-ratio: 1;
+  background: hsl(230 20% 8%);
+  border: 2px solid hsl(var(--game-border));
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.inventory-item:hover {
+  border-color: hsl(var(--game-cyan));
+  transform: translateY(-2px);
+}
+
+.inventory-item-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.inventory-item-name {
+  font-size: 0.5rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Achievement Badge */
+.achievement-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, hsl(50 100% 20% / 0.3), hsl(50 100% 10% / 0.2));
+  border: 2px solid hsl(var(--game-yellow));
+  margin-bottom: 0.5rem;
+}
+
+.achievement-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.achievement-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.achievement-title {
+  font-size: 0.5rem;
+  color: hsl(var(--game-yellow));
+  margin-bottom: 0.25rem;
+}
+
+.achievement-desc {
+  font-size: 0.4rem;
+  color: hsl(0 0% 70%);
+  line-height: 1.5;
+}
+
+/* Character Avatar */
+.character-avatar {
+  width: 80px;
+  height: 80px;
+  border: 4px solid hsl(var(--game-cyan));
+  image-rendering: pixelated;
+  background: hsl(230 20% 15%);
+}
+
+/* Bottom Navigation */
+.game-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: hsl(var(--game-panel));
+  border-top: 4px solid hsl(var(--game-border));
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  z-index: 50;
+}
+
+.game-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.5rem;
+  color: hsl(0 0% 60%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.game-nav-item:hover,
+.game-nav-item.active {
+  color: hsl(var(--game-cyan));
+}
+
+.game-nav-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Skill Tag */
+.skill-tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.4rem;
+  background: hsl(230 20% 15%);
+  border: 1px solid hsl(var(--game-border));
+  margin: 0.125rem;
+  color: hsl(0 0% 80%);
+}
+
+/* Scanline overlay for CRT effect */
+.game-scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsl(0 0% 0% / 0.03) 2px,
+    hsl(0 0% 0% / 0.03) 4px
+  );
+  z-index: 100;
+}
+
+/* Flicker animation for retro feel */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  97% { opacity: 0.9; }
+}
+
+.game-flicker {
+  animation: flicker 5s ease-in-out infinite;
+}
+
+/* Text styles */
+.game-text-xs {
+  font-size: 0.4rem;
+  line-height: 1.6;
+}
+
+.game-text-sm {
+  font-size: 0.5rem;
+  line-height: 1.5;
+}
+
+.game-text-base {
+  font-size: 0.625rem;
+  line-height: 1.4;
+}
+
+.game-text-lg {
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+/* Color utilities */
+.text-game-cyan { color: hsl(var(--game-cyan)); }
+.text-game-magenta { color: hsl(var(--game-magenta)); }
+.text-game-yellow { color: hsl(var(--game-yellow)); }
+.text-game-green { color: hsl(var(--game-green)); }
+.text-game-red { color: hsl(var(--game-red)); }
+.text-game-blue { color: hsl(var(--game-blue)); }
+.text-game-orange { color: hsl(var(--game-orange)); }
+.text-game-purple { color: hsl(var(--game-purple)); }
+
+.bg-game-cyan { background-color: hsl(var(--game-cyan)); }
+.bg-game-magenta { background-color: hsl(var(--game-magenta)); }
+.bg-game-yellow { background-color: hsl(var(--game-yellow)); }
+.bg-game-green { background-color: hsl(var(--game-green)); }
+.bg-game-red { background-color: hsl(var(--game-red)); }
+.bg-game-blue { background-color: hsl(var(--game-blue)); }
+.bg-game-orange { background-color: hsl(var(--game-orange)); }
+.bg-game-purple { background-color: hsl(var(--game-purple)); }
