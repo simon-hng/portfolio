@@ -16,7 +16,7 @@ interface TerminalProps {
 const WELCOME_MESSAGE = `
 ╔═══════════════════════════════════════════════════════════════════╗
 ║                                                                   ║
-║   Welcome to Simon's Portfolio                           ║
+║   Welcome to Simon's Portfolio                                    ║
 ║                                                                   ║
 ║   Type 'help' to see available commands                           ║
 ║   Press Ctrl+J for quick navigation                               ║
