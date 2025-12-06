@@ -110,18 +110,18 @@
     --terminal-green: 142 71% 45%;
     --terminal-amber: 38 92% 50%;
     
-    /* 8-bit Game colors */
-    --game-bg: 230 25% 8%;
-    --game-panel: 230 20% 12%;
-    --game-border: 230 15% 25%;
-    --game-cyan: 180 100% 50%;
-    --game-magenta: 300 100% 60%;
-    --game-yellow: 50 100% 50%;
-    --game-green: 120 100% 40%;
-    --game-red: 0 100% 50%;
-    --game-blue: 210 100% 60%;
-    --game-orange: 30 100% 50%;
-    --game-purple: 270 100% 65%;
+    /* 8-bit Game colors - muted, terminal-inspired */
+    --game-bg: 220 20% 6%;
+    --game-panel: 220 15% 10%;
+    --game-border: 220 10% 20%;
+    --game-cyan: 142 71% 45%;
+    --game-magenta: 142 50% 35%;
+    --game-yellow: 142 60% 50%;
+    --game-green: 142 71% 45%;
+    --game-red: 0 60% 50%;
+    --game-blue: 200 50% 45%;
+    --game-orange: 30 60% 45%;
+    --game-purple: 142 40% 40%;
   }
 
   .dark {
@@ -478,41 +478,25 @@
   overflow-x: hidden;
 }
 
-/* Pixel border mixin via box-shadow */
+/* Minimal border style */
 .pixel-border {
-  border: 4px solid hsl(var(--game-border));
-  box-shadow:
-    4px 4px 0 0 hsl(var(--game-border)),
-    -4px -4px 0 0 hsl(230 15% 35%),
-    inset 2px 2px 0 0 hsl(230 15% 20%);
+  border: 1px solid hsl(var(--game-border));
 }
 
 .pixel-border-cyan {
-  border-color: hsl(var(--game-cyan));
-  box-shadow:
-    4px 4px 0 0 hsl(180 100% 30%),
-    inset 2px 2px 0 0 hsl(180 100% 70%);
+  border-color: hsl(var(--game-cyan) / 0.5);
 }
 
 .pixel-border-yellow {
-  border-color: hsl(var(--game-yellow));
-  box-shadow:
-    4px 4px 0 0 hsl(50 100% 30%),
-    inset 2px 2px 0 0 hsl(50 100% 70%);
+  border-color: hsl(var(--game-yellow) / 0.5);
 }
 
 .pixel-border-magenta {
-  border-color: hsl(var(--game-magenta));
-  box-shadow:
-    4px 4px 0 0 hsl(300 100% 40%),
-    inset 2px 2px 0 0 hsl(300 100% 80%);
+  border-color: hsl(var(--game-border));
 }
 
 .pixel-border-green {
-  border-color: hsl(var(--game-green));
-  box-shadow:
-    4px 4px 0 0 hsl(120 100% 25%),
-    inset 2px 2px 0 0 hsl(120 100% 60%);
+  border-color: hsl(var(--game-green) / 0.5);
 }
 
 /* Game Panel */
@@ -524,29 +508,30 @@
 
 /* Section Title */
 .game-section-title {
-  font-size: 0.625rem;
+  font-size: 0.5rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: hsl(var(--game-green)) !important;
+  opacity: 0.7;
 }
 
 .game-section-title::before,
 .game-section-title::after {
   content: "";
   flex: 1;
-  height: 2px;
-  background: currentColor;
-  opacity: 0.3;
+  height: 1px;
+  background: hsl(var(--game-border));
 }
 
 /* Stat Bar */
 .stat-bar {
-  height: 12px;
-  background: hsl(230 20% 15%);
-  border: 2px solid hsl(var(--game-border));
+  height: 8px;
+  background: hsl(var(--game-panel));
+  border: 1px solid hsl(var(--game-border));
   position: relative;
   overflow: hidden;
 }
@@ -554,66 +539,43 @@
 .stat-bar-fill {
   height: 100%;
   transition: width 0.5s ease-out;
+  background: hsl(var(--game-green)) !important;
+  opacity: 0.7;
 }
 
 .stat-bar-segments {
-  position: absolute;
-  inset: 0;
-  display: flex;
-}
-
-.stat-bar-segments::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent 8px,
-    hsl(230 20% 10% / 0.5) 8px,
-    hsl(230 20% 10% / 0.5) 10px
-  );
+  display: none;
 }
 
 /* Quest Item */
 .quest-item {
   padding: 0.75rem;
-  background: hsl(230 20% 8%);
-  border-left: 3px solid hsl(var(--game-cyan));
+  background: transparent;
+  border-left: 2px solid hsl(var(--game-border));
   margin-bottom: 0.5rem;
   transition: all 0.2s;
 }
 
 .quest-item:hover {
-  background: hsl(230 20% 10%);
-  border-left-color: hsl(var(--game-yellow));
+  background: hsl(var(--game-panel));
+  border-left-color: hsl(var(--game-green) / 0.7);
 }
 
 .quest-item.active {
   border-left-color: hsl(var(--game-green));
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 5px hsl(var(--game-green) / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 15px hsl(var(--game-green) / 0.6);
-  }
 }
 
 /* Inventory Grid */
 .inventory-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .inventory-item {
   aspect-ratio: 1;
-  background: hsl(230 20% 8%);
-  border: 2px solid hsl(var(--game-border));
+  background: transparent;
+  border: 1px solid hsl(var(--game-border));
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -625,8 +587,8 @@
 }
 
 .inventory-item:hover {
-  border-color: hsl(var(--game-cyan));
-  transform: translateY(-2px);
+  border-color: hsl(var(--game-green) / 0.7);
+  background: hsl(var(--game-panel));
 }
 
 .inventory-item-icon {
@@ -650,8 +612,9 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem;
-  background: linear-gradient(135deg, hsl(50 100% 20% / 0.3), hsl(50 100% 10% / 0.2));
-  border: 2px solid hsl(var(--game-yellow));
+  background: transparent;
+  border: 1px solid hsl(var(--game-border));
+  border-left: 2px solid hsl(var(--game-green) / 0.7);
   margin-bottom: 0.5rem;
 }
 
@@ -681,9 +644,9 @@
 .character-avatar {
   width: 80px;
   height: 80px;
-  border: 4px solid hsl(var(--game-cyan));
-  image-rendering: pixelated;
-  background: hsl(230 20% 15%);
+  border: 1px solid hsl(var(--game-border));
+  image-rendering: auto;
+  background: hsl(var(--game-panel));
 }
 
 /* Bottom Navigation */
@@ -692,8 +655,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: hsl(var(--game-panel));
-  border-top: 4px solid hsl(var(--game-border));
+  background: hsl(var(--game-bg));
+  border-top: 1px solid hsl(var(--game-border));
   display: flex;
   justify-content: space-around;
   padding: 0.5rem 0;
@@ -716,7 +679,7 @@
 
 .game-nav-item:hover,
 .game-nav-item.active {
-  color: hsl(var(--game-cyan));
+  color: hsl(var(--game-green));
 }
 
 .game-nav-item svg {
@@ -729,38 +692,20 @@
   display: inline-block;
   padding: 0.25rem 0.5rem;
   font-size: 0.4rem;
-  background: hsl(230 20% 15%);
+  background: transparent;
   border: 1px solid hsl(var(--game-border));
   margin: 0.125rem;
-  color: hsl(0 0% 80%);
+  color: hsl(0 0% 60%);
 }
 
-/* Scanline overlay for CRT effect */
+/* Scanline overlay - disabled for minimal look */
 .game-scanlines {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    hsl(0 0% 0% / 0.03) 2px,
-    hsl(0 0% 0% / 0.03) 4px
-  );
-  z-index: 100;
+  display: none;
 }
 
-/* Flicker animation for retro feel */
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  92% { opacity: 1; }
-  93% { opacity: 0.8; }
-  94% { opacity: 1; }
-  97% { opacity: 0.9; }
-}
-
+/* Flicker animation - disabled */
 .game-flicker {
-  animation: flicker 5s ease-in-out infinite;
+  /* disabled */
 }
 
 /* Text styles */

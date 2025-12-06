@@ -61,16 +61,10 @@ export function GamePortfolio({ data }: GamePortfolioProps) {
 
   return (
     <div className="game-container">
-      {/* Scanline effect */}
-      <div className="game-scanlines" />
-      
-      {/* Header with title */}
-      <div className="text-center mb-4 game-flicker">
-        <h1 className="game-text-base text-game-cyan mb-1">
-          ═══ PORTFOLIO ═══
-        </h1>
-        <p className="game-text-xs text-gray-500">
-          Press buttons to navigate
+      {/* Header */}
+      <div className="text-center mb-4">
+        <p className="game-text-xs text-gray-600">
+          Scroll or tap to navigate
         </p>
       </div>
 

@@ -19,7 +19,7 @@ const networkIcons: Record<Profile["network"], typeof Github> = {
 
 export function CharacterCard({ personal, currentTitle }: CharacterCardProps) {
   return (
-    <div className="game-panel pixel-border pixel-border-cyan">
+    <div className="game-panel pixel-border">
       <div className="flex gap-4">
         {/* Avatar */}
         <div className="relative">
@@ -33,32 +33,28 @@ export function CharacterCard({ personal, currentTitle }: CharacterCardProps) {
               style={{ imageRendering: "auto" }}
             />
           </div>
-          {/* Level badge */}
-          <div className="absolute -bottom-1 -right-1 bg-game-yellow text-black px-1 py-0.5 text-[0.4rem] font-bold">
-            LV.25
-          </div>
         </div>
 
         {/* Info */}
         <div className="flex-1 min-w-0">
-          <h1 className="game-text-lg text-game-cyan mb-1 truncate">
+          <h1 className="game-text-lg text-game-green mb-1 truncate">
             {personal.name}
           </h1>
-          <p className="game-text-sm text-game-yellow mb-2">
+          <p className="game-text-sm text-gray-400 mb-2">
             {currentTitle || personal.about}
           </p>
           
           <div className="space-y-1">
-            <div className="flex items-center gap-2 game-text-xs text-gray-400">
-              <MapPin className="w-3 h-3 text-game-magenta" />
+            <div className="flex items-center gap-2 game-text-xs text-gray-500">
+              <MapPin className="w-3 h-3 text-gray-500" />
               <span>{personal.location.city}, {personal.location.country}</span>
             </div>
-            <div className="flex items-center gap-2 game-text-xs text-gray-400">
-              <Globe className="w-3 h-3 text-game-cyan" />
+            <div className="flex items-center gap-2 game-text-xs text-gray-500">
+              <Globe className="w-3 h-3 text-gray-500" />
               <span className="truncate">{personal.url.replace("https://", "")}</span>
             </div>
-            <div className="flex items-center gap-2 game-text-xs text-gray-400">
-              <Mail className="w-3 h-3 text-game-green" />
+            <div className="flex items-center gap-2 game-text-xs text-gray-500">
+              <Mail className="w-3 h-3 text-gray-500" />
               <span className="truncate">{personal.email}</span>
             </div>
           </div>
@@ -66,7 +62,7 @@ export function CharacterCard({ personal, currentTitle }: CharacterCardProps) {
       </div>
 
       {/* Social Links */}
-      <div className="mt-3 pt-3 border-t-2 border-dashed border-gray-700">
+      <div className="mt-3 pt-3 border-t border-gray-800">
         <div className="flex flex-wrap gap-2">
           {personal.profiles.map((profile) => {
             const Icon = networkIcons[profile.network];
@@ -76,7 +72,7 @@ export function CharacterCard({ personal, currentTitle }: CharacterCardProps) {
                 href={profile.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="skill-tag flex items-center gap-1.5 hover:border-game-cyan hover:text-game-cyan transition-colors"
+                className="skill-tag flex items-center gap-1.5 hover:border-game-green hover:text-game-green transition-colors"
               >
                 <Icon className="w-3 h-3" />
                 <span>{profile.network}</span>

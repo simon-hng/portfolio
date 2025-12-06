@@ -23,12 +23,12 @@ function getRarity(project: CurriculumVitae["projects"][0]): {
 } {
   const keywords = project.keywords || [];
   if (keywords.includes("Hackathon")) {
-    return { color: "text-game-yellow", label: "Legendary", border: "border-game-yellow" };
+    return { color: "text-game-green", label: "Hackathon", border: "" };
   }
   if (keywords.includes("Side Project")) {
-    return { color: "text-game-purple", label: "Epic", border: "border-game-purple" };
+    return { color: "text-gray-500", label: "Side Project", border: "" };
   }
-  return { color: "text-game-cyan", label: "Rare", border: "border-game-cyan" };
+  return { color: "text-gray-500", label: "Project", border: "" };
 }
 
 function getIcon(project: CurriculumVitae["projects"][0]): string {

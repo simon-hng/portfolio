@@ -9,8 +9,8 @@ interface GameNavProps {
 }
 
 const navItems = [
-  { id: "stats", label: "Stats", icon: User },
   { id: "quests", label: "Quests", icon: Swords },
+  { id: "stats", label: "Stats", icon: User },
   { id: "items", label: "Items", icon: Package },
   { id: "trophies", label: "Awards", icon: Trophy },
 ];
