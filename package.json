@@ -48,12 +48,14 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript-json-schema": "^0.67.0",
     "typst": "^0.10.0-8",
+    "uuid": "^13.0.0",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
+    "@types/uuid": "^11.0.0",
     "autoprefixer": "^10.4.22",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.7",
