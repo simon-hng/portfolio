@@ -1,6 +1,6 @@
 "use client";
 
-import type { Presence, GuestbookEntry, CanvasPixel, Visitor } from "./electric";
+import type { Presence, GuestbookEntry, CanvasPixel, Visitor, ChatMessage } from "./electric";
 
 // Supabase API configuration
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -153,6 +153,35 @@ export async function fetchOnlinePresence(): Promise<Presence[]> {
 export async function fetchCanvasPixels(): Promise<CanvasPixel[]> {
   const result = await supabaseRest<CanvasPixel[]>("canvas_pixels", "GET", {
     query: "order=updated_at.desc",
+  });
+  return result && Array.isArray(result) ? result : [];
+}
+
+// Chat functions
+export async function addChatMessage(message: Omit<ChatMessage, "id" | "created_at">) {
+  const data = {
+    ...message,
+    id: crypto.randomUUID(),
+    created_at: new Date().toISOString(),
+  };
+
+  await supabaseRest<ChatMessage>("chat_messages", "POST", {
+    body: data,
+  });
+
+  return data;
+}
+
+export async function fetchChatMessages(limit = 50): Promise<ChatMessage[]> {
+  const result = await supabaseRest<ChatMessage[]>("chat_messages", "GET", {
+    query: `order=created_at.desc&limit=${limit}`,
+  });
+  return result && Array.isArray(result) ? result.reverse() : [];
+}
+
+export async function fetchChatMessagesSince(since: string): Promise<ChatMessage[]> {
+  const result = await supabaseRest<ChatMessage[]>("chat_messages", "GET", {
+    query: `created_at=gt.${since}&order=created_at.asc`,
   });
   return result && Array.isArray(result) ? result : [];
 }

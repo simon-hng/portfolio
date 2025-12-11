@@ -30,6 +30,13 @@ export interface CanvasPixel {
   updated_at: string;
 }
 
+export interface ChatMessage {
+  id: string;
+  username: string;
+  message: string;
+  created_at: string;
+}
+
 // Note: Electric SQL integration can be added later for real-time sync
 // For now, we're using direct Supabase REST API with polling for updates
 //

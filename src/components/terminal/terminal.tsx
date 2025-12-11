@@ -22,6 +22,8 @@ import {
   addGuestbookEntry,
   fetchCanvasPixels,
   updateCanvasPixel,
+  fetchChatMessages,
+  addChatMessage,
 } from "@/lib/db";
 import type { CanvasPixel } from "@/lib/electric";
 
@@ -42,7 +44,7 @@ const WELCOME_MESSAGE = `
 ║   Type 'help' to see available commands                           ║
 ║   Press Ctrl+J for quick navigation                               ║
 ║                                                                   ║
-║   NEW: Try 'who', 'guestbook', or 'draw' for collaborative fun!   ║
+║   NEW: Try 'who', 'chat', 'guestbook', or 'draw' to collaborate!  ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
 `;
@@ -162,6 +164,11 @@ export function Terminal({ data }: TerminalProps) {
         await addGuestbookEntry({ username, message });
       },
       getCanvasAscii: () => exportCanvasToAscii(canvasPixels),
+      getChatMessages: fetchChatMessages,
+      sendChatMessage: async (message: string) => {
+        if (!username) throw new Error("No username");
+        await addChatMessage({ username, message });
+      },
     };
   }, [data, username, canvasPixels]);
 

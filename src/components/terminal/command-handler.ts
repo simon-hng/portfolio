@@ -29,6 +29,13 @@ export interface CommandContext {
   }>>;
   addGuestbookEntry: (message: string) => Promise<void>;
   getCanvasAscii: () => string;
+  getChatMessages: () => Promise<Array<{
+    id: string;
+    username: string;
+    message: string;
+    created_at: string;
+  }>>;
+  sendChatMessage: (message: string) => Promise<void>;
 }
 
 export type AsyncCommandHandler = (
@@ -302,6 +309,93 @@ Commands:
       action: "toggle-canvas",
     };
   },
+
+  chat: async (args, ctx) => {
+    // Handle 'chat <message>' - send a message
+    if (args.length > 0) {
+      const message = args.join(" ");
+
+      if (!ctx.username) {
+        return {
+          output: "You need a username to chat. Choose one now:",
+          action: "prompt-username",
+        };
+      }
+
+      if (message.length > 300) {
+        return {
+          output: "Message too long. Maximum 300 characters.",
+          isError: true,
+        };
+      }
+
+      try {
+        await ctx.sendChatMessage(message);
+        return {
+          output: `Message sent! Type 'chat' to see recent messages.`,
+        };
+      } catch (error) {
+        return {
+          output: "Failed to send message. Please try again.",
+          isError: true,
+        };
+      }
+    }
+
+    // Show recent chat messages
+    try {
+      const messages = await ctx.getChatMessages();
+
+      if (messages.length === 0) {
+        return {
+          output: `
+╭─────────────────────────────────────────────────────────────╮
+│  💬 Real-time Chat                                          
+├─────────────────────────────────────────────────────────────┤
+│  No messages yet. Start the conversation!                   
+│                                                             
+│  Usage: chat <message>                                      
+│  Example: chat Hello everyone!                              
+╰─────────────────────────────────────────────────────────────╯`,
+        };
+      }
+
+      const formatChatTime = (dateStr: string): string => {
+        const date = new Date(dateStr);
+        return date.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      };
+
+      const messageLines = messages.slice(-20).map((m) => {
+        const time = formatChatTime(m.created_at);
+        const isOwnMessage = m.username === ctx.username;
+        const userColor = isOwnMessage ? "●" : "○";
+        const truncatedMsg = m.message.length > 50 
+          ? m.message.slice(0, 50) + "..." 
+          : m.message;
+        return `│  ${userColor} [${time}] ${m.username}: ${truncatedMsg}`;
+      });
+
+      return {
+        output: `
+╭─────────────────────────────────────────────────────────────╮
+│  💬 Real-time Chat (${messages.length} messages)                          
+├─────────────────────────────────────────────────────────────┤
+${messageLines.join("\n")}
+├─────────────────────────────────────────────────────────────┤
+│  Send a message: chat <your message>                        
+│  ● = your messages  ○ = others                              
+╰─────────────────────────────────────────────────────────────╯`,
+      };
+    } catch (error) {
+      return {
+        output: "Failed to fetch chat messages. Please try again.",
+        isError: true,
+      };
+    }
+  },
 };
 
 // Sync commands (original)
@@ -326,6 +420,7 @@ export const commands: Record<string, CommandHandler> = {
   ─────────────────────────────────────────────────────────
   name        - Set or change your username
   who         - See who's online right now
+  chat        - Real-time chat with visitors
   guestbook   - View/add guestbook entries
   draw        - Open collaborative ASCII canvas
 
